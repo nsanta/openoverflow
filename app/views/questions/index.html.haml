@@ -1,0 +1,7 @@
+- @questions.each do |question|
+  .question
+    h3.title= question.title
+    p.body= question.body
+
+
+= will_paginate @questions

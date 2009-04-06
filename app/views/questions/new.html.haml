@@ -1,0 +1,14 @@
+%h1 Nueva Pregunta
+
+- form_for @question do |f|
+
+  = f.label "Título:"
+  
+  = f.text_field :title
+  
+  = f.label "Pregunta:"
+  
+  = f.text_field :body
+  
+  = submit_tag 'Preguntar!'
+  
