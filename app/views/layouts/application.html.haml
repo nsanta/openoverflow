@@ -1,0 +1,16 @@
+!!! Transitional
+%html{ :xmlns => "http://www.w3.org/1999/xhtml", :lang => "en", 'xml:lang' => "en" }
+  %head
+    %meta{ 'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8' }
+    %title= h(yield(:title) || "Untitled")
+    = stylesheet_link_tag 'application'
+    = yield(:head)
+  %body
+    %div#container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}" 
+      
+      - if show_title?
+        %h1=h yield(:title)
+      = yield 
+

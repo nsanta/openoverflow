@@ -176,3 +176,144 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 11:46:53) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 21ms (View: 4, DB: 0) | 200 OK [http://localhost/user_session/new]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:16:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 58ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 12:16:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:16:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 12:16:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 19ms (View: 4, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:16:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Redirected to http://localhost:3000/user_session/new
+Filter chain halted as [:require_user] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 12:16:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 71ms (View: 56, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 12:16:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 4, DB: 0) | 200 OK [http://localhost/user_session/new]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:16:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:20:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #2 of app/views/layouts/application.html.haml:
+1: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+2:   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+3: <html>
+4:   <head>
+5:     <title><%= h(yield(:title) || "Untitled") %></title>
+
+    app/views/layouts/application.html.haml:2
+    haml (2.0.9) lib/haml/precompiler.rb:314:in `push_plain'
+    haml (2.0.9) lib/haml/precompiler.rb:228:in `process_line'
+    haml (2.0.9) lib/haml/precompiler.rb:156:in `precompile'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `each'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `each_with_index'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `precompile'
+    haml (2.0.9) lib/haml/engine.rb:100:in `initialize'
+    haml (2.0.9) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.0.9) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (142.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 12:21:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (Illegal nesting: nesting within plain text is illegal.) on line #2 of app/views/layouts/application.html.haml:
+1: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+2:   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+3: <html>
+4:   <head>
+5:     <title><%= h(yield(:title) || "Untitled") %></title>
+
+    app/views/layouts/application.html.haml:2
+    haml (2.0.9) lib/haml/precompiler.rb:314:in `push_plain'
+    haml (2.0.9) lib/haml/precompiler.rb:228:in `process_line'
+    haml (2.0.9) lib/haml/precompiler.rb:156:in `precompile'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `each'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `each_with_index'
+    haml (2.0.9) lib/haml/precompiler.rb:122:in `precompile'
+    haml (2.0.9) lib/haml/engine.rb:100:in `initialize'
+    haml (2.0.9) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.0.9) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (86.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-04-06 13:36:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 13:36:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 72ms (View: 3, DB: 0) | 200 OK [http://localhost/user_session/new]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-04-06 13:37:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 25ms (View: 9, DB: 0) | 200 OK [http://localhost/user_session/new]
