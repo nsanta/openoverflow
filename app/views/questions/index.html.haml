@@ -2,8 +2,7 @@
 
 - @questions.each do |question|
   .question
-    %h3.title= question.title
-    %p.body= question.body
-
+    %h3.title= link_to(question.title , question)
+    %p.tags= question.tag_list
 
 = will_paginate @questions

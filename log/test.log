@@ -301,3 +301,72 @@ Processing QuestionsController#create (for 0.0.0.0 at 2009-04-01 21:57:56) [POST
 Rendering template within layouts/application
 Rendering questions/new
 Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions?question%5Bbody%5D=body&question%5Btitle%5D=title]
+** acts_as_taggable_on: initialized properly.
+
+
+Processing QuestionsController#index (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/questions]
+
+
+Processing QuestionsController#index (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions]
+
+
+Processing QuestionsController#new (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions/new]
+
+
+Processing QuestionsController#new (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions/new]
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2009-04-07 11:42:20) [POST]
+  Parameters: {"action"=>"create", "controller"=>"questions", "question"=>{"body"=>"body", "title"=>"title"}}
+Redirected to http://test.host/questions
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/questions?question%5Bbody%5D=body&question%5Btitle%5D=title]
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2009-04-07 11:42:20) [POST]
+  Parameters: {"action"=>"create", "controller"=>"questions", "question"=>{"body"=>"body", "title"=>"title"}}
+Redirected to http://test.host/questions
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/questions?question%5Bbody%5D=body&question%5Btitle%5D=title]
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2009-04-07 11:42:20) [POST]
+  Parameters: {"action"=>"create", "controller"=>"questions", "question"=>{"body"=>"body", "title"=>"title"}}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions?question%5Bbody%5D=body&question%5Btitle%5D=title]
+
+
+Processing QuestionsController#create (for 0.0.0.0 at 2009-04-07 11:42:20) [POST]
+  Parameters: {"action"=>"create", "controller"=>"questions", "question"=>{"body"=>"body", "title"=>"title"}}
+Rendering template within layouts/application
+Rendering questions/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions?question%5Bbody%5D=body&question%5Btitle%5D=title]
+
+
+Processing QuestionsController#show (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions/1]
+
+
+Processing QuestionsController#show (for 0.0.0.0 at 2009-04-07 11:42:20) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/questions/1]

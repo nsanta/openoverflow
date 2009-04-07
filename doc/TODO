@@ -13,7 +13,7 @@
  - Show 
    % render syntax highlightning from server side
  - Paginate By:
-   % recent
+   % recent (D)
    % unanswered
    % most popular
    % by tags
@@ -29,7 +29,7 @@
   - Google?
   - Own add?
 * Tags
-  - Questions
+  - Questions (D)
   - Cloud
 Search
   - All

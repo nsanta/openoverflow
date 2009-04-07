@@ -4,13 +4,18 @@
 
 - form_for @question do |f|
 
-  = f.label "question.title"
+  = f.label t("question.title")
   
   = f.text_field :title
   %br
-  = f.label "question.body"
+  = f.label t("question.body")
   
   = f.text_area :body
   %br
-  = submit_tag "question.create_button"
+  = f.label t("question.tags")
+  
+  = f.text_field :tag_list
+  %br
+  
+  = submit_tag t("question.create_button")
   

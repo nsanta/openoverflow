@@ -85,5 +85,21 @@ describe QuestionsController do
     
   end
 
+  describe "handling GET 'show'" do
+    before :each do
+      @mock_question = mock_model(Question)
+      Question.should_receive(:find).with('1').and_return(@mock_question)
+      get :show , :id => '1'
+    end
+    
+  
+    it "should be success" do
+      response.should be_success
+    end
+    
+    it "should assigns the question" do
+      assigns[:question].should == @mock_question
+    end
+  end
 
 end
