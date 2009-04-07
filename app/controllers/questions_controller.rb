@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   skip_before_filter :require_user , :only => [:show, :index]
 
   def index
-    @questions = Question.paginate(:all , :page => params[:page] , :per_page => 10 , :order => 'DESC')
+    @questions = Question.paginate(:all , :page => params[:page] , :per_page => 10 , :order => 'created_at DESC')
   end
 
   def new
@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
+    @question.user = current_user
     if @question.save
       flash[:notice] = 'La pregunta ha sido creada'
       redirect_to questions_path

@@ -1,14 +1,16 @@
 %h1 Nueva Pregunta
 
+= error_messages_for :question
+
 - form_for @question do |f|
 
-  = f.label "Título:"
+  = f.label "question.title"
   
   = f.text_field :title
+  %br
+  = f.label "question.body"
   
-  = f.label "Pregunta:"
-  
-  = f.text_field :body
-  
-  = submit_tag 'Preguntar!'
+  = f.text_area :body
+  %br
+  = submit_tag "question.create_button"
   

@@ -1,0 +1,38 @@
+* Auth
+ - Login(D)
+ - Logout(D)
+ - Register (D)
+* User Profile 
+ - Avatar
+ - Activity
+* Questions
+ - Create
+   % form (D)
+   % textile editor
+ - Edit
+ - Show 
+   % render syntax highlightning from server side
+ - Paginate By:
+   % recent
+   % unanswered
+   % most popular
+   % by tags
+ - Vote thumbs up | down
+ - Answer Flag
+* Comments with thread
+ - Create
+ - Show
+ - Vote thumbs up | down
+* Badges
+ - Simple by votes and answer types
+* Advertising
+  - Google?
+  - Own add?
+* Tags
+  - Questions
+  - Cloud
+Search
+  - All
+  
+
+   

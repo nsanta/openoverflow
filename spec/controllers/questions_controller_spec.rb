@@ -9,7 +9,7 @@ describe QuestionsController do
   describe "handling GET 'index'" do
     before :each do
       @mock_questions = mock('Questions')
-      Question.should_receive(:paginate).with(:all , :page => params[:page] , :per_page => 10 , :order => 'DESC').and_return(@mock_questions)
+      Question.should_receive(:paginate).with(:all , :page => params[:page] , :per_page => 10 , :order => 'created_at DESC').and_return(@mock_questions)
       get :index
     end
     
@@ -46,6 +46,9 @@ describe QuestionsController do
       @valid_params = {'title' => 'title' , 'body' => 'body'}
       @mock_question = mock_model(Question)
       Question.should_receive(:new).with(@valid_params).and_return(@mock_question)
+      @mock_user = mock_model(User)
+      controller.stub!(:current_user => @mock_user)
+      @mock_question.should_receive("user=").with(@mock_user)
     end
     
     describe "with valid data" do

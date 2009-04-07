@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20090331235303) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
