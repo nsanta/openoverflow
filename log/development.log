@@ -1333,3 +1333,4 @@ Processing QuestionsController#create (for 127.0.0.1 at 2009-04-07 14:15:09) [PO
 Rendering template within layouts/application
 Rendering questions/new
 Completed in 117ms (View: 4, DB: 1) | 200 OK [http://localhost/questions]
+** acts_as_taggable_on: initialized properly.
