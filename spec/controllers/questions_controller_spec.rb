@@ -114,6 +114,69 @@ describe QuestionsController do
     end
   end
 
+  describe "handling GET 'edit'" do
+    before :each do
+      @mock_question = mock_model(Question)
+      @mock_user = mock_model(User , :questions => mock('Proxy'))
+      @mock_user.questions.should_receive(:find).with('1').and_return(@mock_question)
+      controller.stub!(:current_user => @mock_user)
+      get :edit , :id => '1'
+    end
+    
+  
+    it "should be success" do
+      response.should be_success
+    end
+    
+    it "should assigns the question" do
+      assigns[:question].should == @mock_question
+    end
+  end
+
+
+  describe "handling PUT 'update'" do
+    before :each do
+      @valid_params = {'title' => 'title' , 'body' => 'body'}
+      @mock_question = mock_model(Question)
+      @mock_user = mock_model(User , :questions => mock('Proxy'))
+      @mock_user.questions.should_receive(:find).with('1').and_return(@mock_question)
+      controller.stub!(:current_user => @mock_user)
+    end
+    
+    describe "with valid data" do
+      before :each do
+        @mock_question.should_receive(:update_attributes).with(@valid_params).and_return(true)
+        put :update , :id => '1' , :question => @valid_params
+      end   
+      
+      it "should show a message" do
+        flash[:notice].should == 'La pregunta ha sido actualizada'
+      end
+      
+      it "should be redirected to index" do
+        response.should redirect_to(question_path(@mock_question))
+      end
+      
+    end
+    
+    describe "with invalid data" do
+      before :each do
+        @mock_question.should_receive(:update_attributes).with(@valid_params).and_return(false)
+        put :update , :id => '1' , :question => @valid_params
+      end   
+      
+      it "should show a message" do
+        flash[:notice].should == 'La pregunta NO ha sido actualizada'
+      end
+      
+      it "should render the new template" do
+        response.should render_template('questions/edit')
+      end
+      
+    end
+    
+  end
+
   describe "handling POST 'vote'" do
     before :each do
       @mock_question = mock_model(Question , :votes => mock('Proxy'))

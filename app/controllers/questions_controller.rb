@@ -28,6 +28,24 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def edit
+    @question = current_user.questions.find(params[:id])
+  end
+  
+  def update
+    @question = current_user.questions.find(params[:id])
+    if @question.update_attributes(params[:question])
+      flash[:notice] = 'La pregunta ha sido actualizada'
+      redirect_to @question
+    else
+      flash[:notice] = 'La pregunta NO ha sido actualizada'
+      render 'edit'
+    end
+  end
+
+
+
+
   def vote
     @question = Question.find(params[:id])
     @vote = @question.votes.find_by_user_id(current_user.id)

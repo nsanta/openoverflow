@@ -3,5 +3,13 @@
 - form_for @user, :url => account_path do |f| 
   = f.error_messages 
   = render :partial => "form", :object => f 
+  = form.label :password, form.object.new_record? ? nil : "Change password" 
+  %br 
+  = form.password_field :password
+  %br
+  = form.label :password_confirmation
+  %br
+  = form.password_field :password_confirmation
+  %br
   = f.submit "Register" 
 
