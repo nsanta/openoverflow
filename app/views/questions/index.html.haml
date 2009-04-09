@@ -4,7 +4,9 @@
   .question
     %h3.title= link_to(question.title , question)
     %p.tags= question.tag_list
-    = render :partial => 'common/vote_box' , :locals => {:question => question}
+    %p.votes= "Votes: #{question.votes_average}"
+    %p.votes= "Views: #{question.total_views}"
+    
     
 = will_paginate @questions
 
