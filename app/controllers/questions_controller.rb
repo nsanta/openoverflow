@@ -1,6 +1,8 @@
 class QuestionsController < ApplicationController
 
   skip_before_filter :require_user , :only => [:show, :index]
+  after_filter :increment_total_views , :only => [:show]
+
 
   def index
     @questions = Question.paginate(:all , :page => params[:page] , :per_page => 10 , :order => 'created_at DESC')
@@ -47,6 +49,12 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       format.js {}
     end  
+  end
+
+  private
+  
+  def increment_total_views
+    @question.increment!(:total_views)
   end
 
 end

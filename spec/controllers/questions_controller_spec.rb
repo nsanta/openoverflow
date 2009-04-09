@@ -6,6 +6,17 @@ describe QuestionsController do
     controller.stub!(:require_user).and_return(true)
   end
 
+  describe "filters" do
+    it "should require user on beofre filter" do
+      QuestionsController.before_filters.should include(:require_user)
+    end
+    it "should increment total views on question on after filter" do
+      QuestionsController.after_filters.should include(:increment_total_views)
+    end
+    
+  end
+
+
   describe "handling GET 'index'" do
     before :each do
       @mock_questions = mock('Questions')
@@ -88,6 +99,7 @@ describe QuestionsController do
   describe "handling GET 'show'" do
     before :each do
       @mock_question = mock_model(Question)
+      @mock_question.should_receive(:increment!).with(:total_views)
       Question.should_receive(:find).with('1').and_return(@mock_question)
       get :show , :id => '1'
     end

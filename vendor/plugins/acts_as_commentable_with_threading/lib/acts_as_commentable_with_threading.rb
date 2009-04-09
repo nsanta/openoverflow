@@ -3,7 +3,7 @@ require 'awesome_nested_set'
 ActiveRecord::Base.class_eval do
   include CollectiveIdea::Acts::NestedSet
 end
-require 'comment'
+#require 'comment'
 
 # ActsAsCommentableWithThreading
 module Acts #:nodoc:

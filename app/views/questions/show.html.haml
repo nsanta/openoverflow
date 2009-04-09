@@ -2,3 +2,7 @@
   %h3.title= @question.title
   %p.body= @question.body
   %p.tags= @question.tag_list
+  = render :partial => 'common/vote_box' , :locals => {:question => @question}
+  
+- content_for :javascripts do
+  = javascript_include_tag('vote/question')
