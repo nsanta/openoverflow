@@ -4,5 +4,11 @@
   .question
     %h3.title= link_to(question.title , question)
     %p.tags= question.tag_list
-
+    = render :partial => 'common/vote_box' , :locals => {:question => question}
+    
 = will_paginate @questions
+
+
+- content_for :javascripts do
+  = javascript_include_tag('vote/question')
+

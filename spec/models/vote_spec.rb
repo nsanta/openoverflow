@@ -1,10 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Vote do
+  
   before(:each) do
+    @voteable = Question.create(:title => 'title' , :body => 'body' , :user => mock_model(User))
     @valid_attributes = {
       :vote => 1,
-      :voteable => mock_model(Question),
+      :voteable => @voteable,
       :user => mock_model(User)
     }
   end
@@ -51,5 +53,22 @@ describe Vote do
       @vote.should_not be_valid
     end
     
-  end  
+  end 
+  
+  describe "callbacks" do
+    before :each do
+      @vote = Vote.create(@valid_attributes) 
+    end
+    it "should update the votes average for voteable on create" do
+      @voteable.votes_average.should == 1
+    end
+    
+    it "should update the votes average for voteable on update" do
+      @vote.update_attributes(:vote => '-1')
+      @voteable.reload.votes_average.should == -1
+    end
+    
+  end
+  
+   
 end

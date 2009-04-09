@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @vote = @question.votes.find_by_user_id(current_user.id)
     if @vote
-      if @vote.vote == params[:vote]
+      if @vote.vote.to_s == params[:vote]
         flash[:notice] = "Ya has votado esta pregunta"
       else
         @vote.update_attributes(:vote => params[:vote])

@@ -5,7 +5,8 @@ describe Question do
     @valid_attributes = {
       :title => "What is the best Framework?",
       :body => "body for description",
-      :user => mock_model(User)
+      :user => mock_model(User),
+      :votes_average => 0
     }
   end
 

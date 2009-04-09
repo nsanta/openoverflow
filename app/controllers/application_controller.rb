@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   
   before_filter :require_user 
-  
+  before_filter :load_default_flash_messages 
   
   def current_user
     return @current_user if defined?(@current_user)
@@ -55,6 +55,11 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-
+ 
+    def load_default_flash_messages
+      [:notice , :error].each do |f|
+        flash[f]=''
+      end
+    end
 
 end
