@@ -11,7 +11,11 @@ map.resource :account, :controller => "users"
 
 
 map.resources :questions , :member => {:vote => :post} do |question|
-  question.resources :comments
+  question.resources :anwsers
+end
+
+map.resources :anwsers do |answer|
+  answer.resources :comments
 end
 
 

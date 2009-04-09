@@ -22,22 +22,29 @@ describe Question do
   describe "validations" do
     
     it "should create a new instance given valid attributes" do
-      @question = Question.create(@valid_attributes)
+      @question = Question.new(@valid_attributes)
       @question.should be_valid
     end
     
     it "should require title" do
-      @question = Question.create(@valid_attributes.merge(:title => nil))
+      @question = Question.new(@valid_attributes.merge(:title => nil))
       @question.should_not be_valid
     end
     
     it "should require body" do
-      @question = Question.create(@valid_attributes.merge(:body => nil))
+      @question = Question.new(@valid_attributes.merge(:body => nil))
       @question.should_not be_valid
     end
     
     it "should require user" do
-      @question = Question.create(@valid_attributes.merge(:user => nil))
+      @question = Question.new(@valid_attributes.merge(:user => nil))
+      @question.should_not be_valid
+    end
+    
+    it "should require the lenght of  title" do
+      @question = Question.new(@valid_attributes.merge(:title => '1'))
+      @question.should_not be_valid
+      @question = Question.new(@valid_attributes.merge(:title => 'aaaaaaaaaasddddddddddddddvvvvvvvvvvvvvvrrrrrrrrrrrrrweeeeeeeeeeee'))
       @question.should_not be_valid
     end
     

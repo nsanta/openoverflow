@@ -1,7 +1,6 @@
 class CreateAnswers < ActiveRecord::Migration
   def self.up
     create_table :answers do |t|
-      t.string :title
       t.text :body
       t.references :user
       t.references :question
