@@ -1,0 +1,4 @@
+.vote_box
+  %p= link_to('^' , vote_question_path(question , :vote => '1' , :format => :js) , :class => 'question_vote_link')
+  %p{:id => "question_vote_avg_#{question.id}"}= question.votes_average
+  %p= link_to('v' , vote_question_path(question , :vote => '-1' , :format => :js), :class => 'question_vote_link')
