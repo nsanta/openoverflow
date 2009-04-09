@@ -6,10 +6,10 @@
  - Avatar
  - Activity
 * Questions
- - Create
+ - Create (D)
    % form (D)
    % textile editor (D)
- - Edit
+ - Edit(D)
  - Show 
    % render syntax highlightning from server side
  - Paginate By:
@@ -17,12 +17,19 @@
    % unanswered
    % most popular
    % by tags
- - Vote thumbs up | down (D)
- - Answer Flag
-* Comments with thread
+ - Vote thumbs up | down (D)   
+* Answers
  - Create
+ - Edit
  - Show
+   % render syntax highlightning from server side
  - Vote thumbs up | down
+ - Answer Flag
+* Comments
+ - Create
+ - Edit
+ - Show
+
 * Badges
  - Simple by votes and answer types
 * Advertising
@@ -30,7 +37,6 @@
   - Own add?
 * Tags
   - Questions (D)
-  - Cloud
 Search
   - All
   
