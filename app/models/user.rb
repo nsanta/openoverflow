@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :questions
 
+  has_many :question_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Question'"
+
 end

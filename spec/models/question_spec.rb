@@ -11,7 +11,10 @@ describe Question do
 
   describe "associations" do
     it "should belong to a user" do
-      
+      Question.should belong_to(:user)
+    end
+    it "should have many question votes" do
+      Question.should have_many(:votes, :as => :voteable)
     end
   end
 

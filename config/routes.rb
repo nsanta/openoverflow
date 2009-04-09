@@ -10,7 +10,7 @@ map.resource :user_session
 map.resource :account, :controller => "users"
 
 
-map.resources :questions
+map.resources :questions , :member => {:vote => :post}
 
 
 map.root :controller => "home", :action => "index"

@@ -26,4 +26,27 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def vote
+    @question = Question.find(params[:id])
+    @vote = @question.votes.find_by_user_id(current_user.id)
+    if @vote
+      if @vote.vote == params[:vote]
+        flash[:notice] = "Ya has votado esta pregunta"
+      else
+        @vote.update_attributes(:vote => params[:vote])
+        flash[:notice] = "Tu voto ha sido actualizado"
+      end
+    else
+      @vote = @question.votes.build(:user => current_user , :vote => params[:vote])
+      if @vote.save
+        flash[:notice] = "Tu voto a sido guardado"
+      else
+        flash[:notice] = "Tu voto NO a sido guardado"
+      end
+    end
+    respond_to do |format|
+      format.js {}
+    end  
+  end
+
 end
