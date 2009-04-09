@@ -1,0 +1,6 @@
+- form_for @user, :url => account_path do |f| 
+  = f.error_messages 
+  = render :partial => "form", :object => f 
+  = f.label "Avatar" , :avatar
+  = f.file_field :avatar
+  = f.submit "update" 

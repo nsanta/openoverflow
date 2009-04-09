@@ -1,0 +1,10 @@
+%h1 Editar Pregunta
+
+= error_messages_for :question
+
+- form_for @question , :method => :put do |f|
+
+  = render :partial => 'form' , :locals => {:f => f}
+  
+  = submit_tag t("question.edit_button")
+
