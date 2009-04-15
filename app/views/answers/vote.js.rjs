@@ -1,0 +1,3 @@
+@answer.reload
+page.replace_html(:flash_notice , flash[:notice])
+page.replace_html("answer_vote_avg_#{@answer.id}", @answer.votes_average)

@@ -6,7 +6,7 @@
     %p.tags= question.tag_list
     %p.votes= "Votes: #{question.votes_average}"
     %p.votes= "Views: #{question.total_views}"
-    
+    %p.votes= "Answers: #{question.answers_count}"
     
 = will_paginate @questions
 

@@ -3,7 +3,7 @@
  - Logout(D)
  - Register (D)
 * User Profile 
- - Avatar
+ - Avatar (D)
  - Activity
 * Questions
  - Create (D)
@@ -19,9 +19,9 @@
    % by tags
  - Vote thumbs up | down (D)   
 * Answers
- - Create
+ - Create(D)
  - Edit
- - Show
+ - Show(D)
    % render syntax highlightning from server side
  - Vote thumbs up | down
  - Answer Flag

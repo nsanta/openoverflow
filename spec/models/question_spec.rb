@@ -17,6 +17,9 @@ describe Question do
     it "should have many question votes" do
       Question.should have_many(:votes, :as => :voteable)
     end
+    it "should have many answers" do
+      Question.should have_many(:answers)
+    end
   end
 
   describe "validations" do

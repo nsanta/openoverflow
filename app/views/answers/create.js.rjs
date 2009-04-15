@@ -1,0 +1,2 @@
+page.insert_html(:bottom , :answers , :partial => 'answers/answer' , :locals => {:answer => @answer}) if @answer.errors.empty?
+page.replace_html(:flash_notice , flash[:notice])

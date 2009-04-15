@@ -2,7 +2,18 @@
   %h3.title= @question.title
   %p.body= @question.body
   %p.tags= @question.tag_list
-  = render :partial => 'common/vote_box' , :locals => {:question => @question}
+  = render :partial => 'common/vote_box' , :locals => {:model => @question}
+
+  
+  
+#answers
+  = link_to("Responder" , '#' , :class => 'answer_new_form_link')
+  %div{:id => 'answer_new_form'}
+    = render :partial => 'answers/new' , :locals => {:question => @question}
+  = render :partial => 'answers/answer' , :collection => @question.answers
   
 - content_for :javascripts do
+  = javascript_include_tag('wmd/wmd')
   = javascript_include_tag('vote/question')
+  = javascript_include_tag('answer/new')
+  = javascript_include_tag('answer/create')

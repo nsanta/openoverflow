@@ -1,0 +1,4 @@
+.answer
+  %p= answer.body
+  %p= "By: #{answer.user.login}"
+  = render :partial => 'common/vote_box' , :locals => {:model => answer}
