@@ -16,7 +16,7 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    @answer = current_user.asnwers.find(params[:id])
+    @answer = current_user.answers.find(params[:id])
   end
 
   def update
