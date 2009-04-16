@@ -5,4 +5,18 @@ class Answer < ActiveRecord::Base
   
   validates_presence_of :user , :question , :body
   
+  
+  
+  
+  # == InstanceMethods
+  
+  def select!
+    if prev_selected = Answer.first(:conditions => {:question_id => self.question_id , :selected => true})
+      prev_selected.toggle!(:selected)
+    end
+    self.toggle!(:selected)
+  end
+  
+  
+  
 end

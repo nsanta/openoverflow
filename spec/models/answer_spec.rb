@@ -40,4 +40,25 @@ describe Answer do
     end
     
   end
+  
+  describe "Instance Methods" do
+    describe ".select!" do
+      before :each do
+        @last_selected_answer = Answer.create!(@valid_attributes)
+        @last_selected_answer.select!
+        @last_selected_answer.reload.selected.should == true 
+        @new_selected_answer = Answer.create!(@valid_attributes)
+        @new_selected_answer.select!
+      end
+    
+      it "should turn the last answer selected to false" do
+        @last_selected_answer.reload.selected.should == false
+      end
+      it "should turn the new answer selected to true" do
+        @new_selected_answer.reload.selected.should == true
+      end
+    end
+  end
+  
+  
 end
