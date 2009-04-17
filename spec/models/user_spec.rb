@@ -12,6 +12,9 @@ describe User do
     it "should have many answers" do
       User.should have_many(:answers)
     end
+    it "should have many comments" do
+      User.should have_many(:comments)
+    end
     it "should have many question votes" do
       User.should have_many(:answers_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Answer'")
     end

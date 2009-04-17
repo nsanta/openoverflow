@@ -16,6 +16,9 @@ describe Answer do
     it "should belong to question" do
       Answer.should belong_to(:question)
     end
+    it "should have many comments" do
+      Answer.should have_many(:comments)
+    end
   end
 
   describe "validations" do

@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
   has_many :question_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Question'"
   has_many :answers
   has_many :answers_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Answer'"  
-  
+  has_many :comments
 end
