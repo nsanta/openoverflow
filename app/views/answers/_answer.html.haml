@@ -2,3 +2,4 @@
   %p= answer.body
   %p= "By: #{answer.user.login}"
   = render :partial => 'common/vote_box' , :locals => {:model => answer}
+  = link_to((answer.selected ? 'selected' : 'unselected') , select_answer_path(answer) , :id => "answer_link_#{answer.id}" , :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")

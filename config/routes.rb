@@ -14,7 +14,7 @@ map.resources :questions , :member => {:vote => :post} do |question|
   question.resources :answers
 end
 
-map.resources :answers, :member => {:vote => :post} do |answer|
+map.resources :answers, :member => {:vote => :post , :select => :post} do |answer|
   answer.resources :comments
 end
 

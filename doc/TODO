@@ -24,7 +24,7 @@
  - Show(D)
    % render syntax highlightning from server side
  - Vote thumbs up | down (D)
- - Answer Flag
+ - Answer Flag (D)
 * Comments
  - Create
  - Edit

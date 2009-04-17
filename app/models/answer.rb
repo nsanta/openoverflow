@@ -15,6 +15,7 @@ class Answer < ActiveRecord::Base
       prev_selected.toggle!(:selected)
     end
     self.toggle!(:selected)
+    prev_selected
   end
   
   
