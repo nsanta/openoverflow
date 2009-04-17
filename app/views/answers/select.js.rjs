@@ -1,0 +1,2 @@
+page.replace_html("answer_link_#{@answer.id}" , 'selected')
+page.replace_html("answer_link_#{@prev_selected.id}" , 'unselected') if @prev_selected
