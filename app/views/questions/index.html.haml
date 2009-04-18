@@ -1,16 +1,7 @@
 %h1 Preguntas
 
 - @questions.each do |question|
-  .question
-    %h3.title= link_to(question.title , question)
-    %p.tags= question.tag_list
-    %p.votes= "Votes: #{question.votes_average}"
-    %p.votes= "Views: #{question.total_views}"
-    %p.votes= "Answers: #{question.answers_count}"
+  = render :partial => 'index_question' , :locals => {:question => question}
     
 = will_paginate @questions
-
-
-- content_for :javascripts do
-  = javascript_include_tag('vote/question')
 

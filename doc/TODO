@@ -17,8 +17,6 @@
 
 * Badges
  - Simple by votes and answer types
-* Advertising
-  - Google
 Search
   - All
 Flags
@@ -31,6 +29,8 @@ Admin
     % Answers(delete)
     % Comments(delete)
     % User(suspend,ban)
-    
-    
+Internacionalizacion:
+  - 100% internacionalizado
+Blog:
+  Mephisto engine
 

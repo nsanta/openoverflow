@@ -5,7 +5,7 @@ body {
   font: 13px "Trebuchet MS", Arial, Helvetica, sans-serif;
   color: #333333; }
 
-h2 {
+h2, h2 a {
   font: 1.82em;
   font-weight: normal;
   letter-spacing: -1px;
@@ -114,8 +114,8 @@ hr {
   line-height: normal; }
   .home_question .meta a {
     color: #C6C6C6; }
-.home_question .entry {
-  padding-bottom: 30px; }
+.home_question .tags a {
+  padding: 0 5px 0 0; }
 
 #sidebar {
   float: right;
