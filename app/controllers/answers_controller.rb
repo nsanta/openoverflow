@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_filter :load_question , :except => [:vote , :select]
-  skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_toke
 
 
   def create

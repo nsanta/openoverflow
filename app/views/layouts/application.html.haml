@@ -8,18 +8,21 @@
     = yield :javascripts
     = yield :stylesheets    
   %body
-    .header
-      .menu
-        %ul
-          %li= link_to('Preguntas' , questions_path)
-          %li= link_to('Login' , login_path)
-          %li= link_to('Registarse' , register_path)
-          %li= link_to('Salir' , logout_path)
-    %div#container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}" 
-      
-      - if show_title?
-        %h1=h yield(:title)
-      = yield 
-
+    #header
+      = render :partial => '/layouts/header'
+    #br{:style => "clear: both;"}  
+    #wrapper
+      #page
+        #content
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}" 
+          = yield 
+        #sidebar
+          = render :partial => '/layouts/sidebar'
+        #br{:style => "clear: both;"}
+    #wrapper2
+      #footer
+        %p#legal
+          = link_to('Sobre el sitio' , '#')
+          = link_to('Contáctenos' , '#')
+          = link_to('Términos de uso' , '#')

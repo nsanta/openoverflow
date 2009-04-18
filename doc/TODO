@@ -1,30 +1,15 @@
-* Auth
- - Login(D)
- - Logout(D)
- - Register (D)
 * User Profile 
- - Avatar (D)
  - Activity
 * Questions
- - Create (D)
-   % form (D)
-   % textile editor (D)
- - Edit(D)
  - Show 
    % render syntax highlightning from server side
  - Paginate By:
-   % recent (D)
    % unanswered
    % most popular
    % by tags
- - Vote thumbs up | down (D)   
 * Answers
- - Create(D)
  - Edit
- - Show(D)
    % render syntax highlightning from server side
- - Vote thumbs up | down (D)
- - Answer Flag (D)
 * Comments
  - Create
  - Edit
@@ -33,12 +18,19 @@
 * Badges
  - Simple by votes and answer types
 * Advertising
-  - Google?
-  - Own add?
-* Tags
-  - Questions (D)
+  - Google
 Search
   - All
-  
+Flags
+  - Questions
+  - Answers
+  - Comments
+Admin
+  - Moderation on
+    % Questions(delete or close)
+    % Answers(delete)
+    % Comments(delete)
+    % User(suspend,ban)
+    
+    
 
-   
