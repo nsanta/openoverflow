@@ -126,4 +126,64 @@ describe AnswersController do
     
   end
 
+
+  describe "handling POST 'flag'" do
+    before :each do
+      @mock_answer = mock_model(Answer)
+      Answer.should_receive(:find).with('1').and_return(@mock_answer)
+      @mock_answer.should_receive(:update_attributes).with(:flag => true)
+      post :flag , :id => '1'
+    end
+    
+    it "should be success" do
+      response.should be_success
+    end
+    
+    
+    it "should assign the answer" do
+      assigns[:answer].should == @mock_answer
+    end
+    
+  end
+  
+  
+  describe "handling POST 'select'" do
+    before :each do
+      @mock_answer = mock_model(Answer , :question => @mock_question)
+      Answer.should_receive(:find).with('1').and_return(@mock_answer)
+    end
+  
+    describe "when the question owner is the user" do
+      before :each do
+        @mock_question.stub!(:user => @mock_user)
+        @mock_answer.should_receive('select!').and_return(@mock_prev)
+        post :select , :id => '1'
+      end 
+      
+      it "should return the previous answer selected" do
+        assigns[:prev_selected].should == @mock_prev
+      end
+      
+      it "should show message 'Tu seleccion ha sido guardada'" do
+        flash[:notice].should == 'Tu seleccion ha sido guardada'
+      end
+      
+    end
+    
+    describe "when the question owner is not the user" do
+      before :each do
+        @mock_prev = mock_model(Answer)
+        @mock_question.stub!(:user => nil)
+        post :select , :id => '1'
+      end
+      
+      
+      it "should show message 'Tu no estas habilitado para seleccionar la respuesta'" do
+        flash[:notice].should == 'Tu no estas habilitado para seleccionar la respuesta'
+      end
+    end
+    
+    
+  end
+  
 end

@@ -43,7 +43,13 @@ class QuestionsController < ApplicationController
     end
   end
 
-
+  def flag
+    @question = Question.find(params[:id])
+    @question.update_attributes(:flag => true)
+    respond_to do |format| 
+      format.js {}
+    end
+  end
 
 
   def vote

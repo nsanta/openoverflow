@@ -10,11 +10,11 @@ map.resource :user_session
 map.resource :account, :controller => "users"
 
 
-map.resources :questions , :member => {:vote => :post} do |question|
+map.resources :questions , :member => {:vote => :post , :flag => :post} do |question|
   question.resources :answers
 end
 
-map.resources :answers, :member => {:vote => :post , :select => :post} do |answer|
+map.resources :answers, :member => {:vote => :post , :select => :post , :flag => :post} do |answer|
   answer.resources :comments
 end
 

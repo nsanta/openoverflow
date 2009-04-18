@@ -230,7 +230,24 @@ describe QuestionsController do
         end
       end  
     end
+  end
+
+  describe "handling POST 'flag'" do
+    before :each do
+      @mock_question = mock_model(Question)
+      Question.should_receive(:find).with('1').and_return(@mock_question)
+      @mock_question.should_receive(:update_attributes).with(:flag => true)
+      post :flag , :id => '1'
+    end
     
+    it "should be success" do
+      response.should be_success
+    end
+    
+    
+    it "should assign the question" do
+      assigns[:question].should == @mock_question
+    end
     
   end
 

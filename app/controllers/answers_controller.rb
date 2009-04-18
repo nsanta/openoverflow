@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_filter :load_question , :except => [:vote , :select]
+  before_filter :load_question , :except => [:vote , :select , :flag]
   skip_before_filter :verify_authenticity_toke
 
 
@@ -53,6 +53,15 @@ class AnswersController < ApplicationController
       format.js {}
     end  
   end
+  
+  def flag
+    @answer = Answer.find(params[:id])
+    @answer.update_attributes(:flag => true)
+    respond_to do |format| 
+      format.js {}
+    end
+  end
+  
   
   def select
     @answer = Answer.find(params[:id])
