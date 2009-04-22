@@ -1,0 +1,19 @@
+.home_question
+  %p.data
+    = "Vistas"
+    %b= question.total_views
+  %p.data
+    = "Respuestas"
+    %b= question.answers_count
+  %p.data
+    = "Votos"
+    %b= question.votes_average
+  %h2.title= link_to(question.title , question)
+  %p.tags
+    = "Tags: "
+    = tag_links(question.tag_list)  
+  %p.meta
+    = image_tag(question.user.avatar.url)
+    %small
+      = "Posted by:"
+      = link_to(question.user.login , question.user)

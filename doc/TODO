@@ -1,24 +1,3 @@
-* User Profile 
- - Activity
-* Questions
- - Show 
-   % render syntax highlightning from server side
- - Paginate By:
-   % unanswered
-   % most popular
-   % by tags
-* Answers
- - Edit
-   % render syntax highlightning from server side
-* Comments
- - Create
- - Edit
- - Show
-
-* Badges
- - Simple by votes and answer types
-Search
-  - All
 Flags
   - Questions
   - Answers
@@ -29,6 +8,24 @@ Admin
     % Answers(delete)
     % Comments(delete)
     % User(suspend,ban)
+User Profile 
+ - Activity
+Questions
+ - Show 
+   % render syntax highlightning from server side
+Answers
+ - Edit
+   % render syntax highlightning from server side
+Comments
+ - Create
+ - Edit
+ - Show
+
+Badges
+ - Simple by votes and answer types
+Search
+  - All
+
 Internacionalizacion:
   - 100% internacionalizado
 Blog:

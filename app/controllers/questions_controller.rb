@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  skip_before_filter :require_user , :only => [:show, :index]
+  skip_before_filter :require_user , :only => [:show, :index , :tag , :unanswered]
   after_filter :increment_total_views , :only => [:show]
 
 
@@ -43,15 +43,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def flag
-    @question = Question.find(params[:id])
-    @question.update_attributes(:flag => true)
-    respond_to do |format| 
-      format.js {}
-    end
-  end
-
-
   def vote
     @question = Question.find(params[:id])
     @vote = @question.votes.find_by_user_id(current_user.id)
@@ -74,6 +65,17 @@ class QuestionsController < ApplicationController
       format.js {}
     end  
   end
+
+  def tag
+    @questions = Question.tagged_with(params[:id] , :on => :tags).paginate(:page => params[:page] || 1, :per_page => 20)
+    render 'index'
+  end
+
+  def unanswered
+    @questions = Question.unanswered(params[:page])
+    render 'index'
+  end
+
 
   private
   

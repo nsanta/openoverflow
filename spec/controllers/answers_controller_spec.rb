@@ -127,26 +127,7 @@ describe AnswersController do
   end
 
 
-  describe "handling POST 'flag'" do
-    before :each do
-      @mock_answer = mock_model(Answer)
-      Answer.should_receive(:find).with('1').and_return(@mock_answer)
-      @mock_answer.should_receive(:update_attributes).with(:flag => true)
-      post :flag , :id => '1'
-    end
-    
-    it "should be success" do
-      response.should be_success
-    end
-    
-    
-    it "should assign the answer" do
-      assigns[:answer].should == @mock_answer
-    end
-    
-  end
-  
-  
+ 
   describe "handling POST 'select'" do
     before :each do
       @mock_answer = mock_model(Answer , :question => @mock_question)

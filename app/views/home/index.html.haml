@@ -1,1 +1,2 @@
-= render :partial => 'question/index_question' , :collection => @questions
+- @questions.each do |question|
+  = render :partial => 'questions/index_question' , :locals => {:question => question}

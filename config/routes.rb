@@ -10,14 +10,20 @@ map.resource :user_session
 map.resource :account, :controller => "users"
 
 
-map.resources :questions , :member => {:vote => :post , :flag => :post} do |question|
+map.resources :questions , :member => {:vote => :post , :tag => :get} ,
+                           :collection => {:unanswered => :get} do |question|
   question.resources :answers
+  question.resources :flags
 end
 
-map.resources :answers, :member => {:vote => :post , :select => :post , :flag => :post} do |answer|
+map.resources :answers, :member => {:vote => :post , :select => :post} do |answer|
   answer.resources :comments
+  answer.resources :flags
 end
 
+map.resources :comments do |comment|
+  comment.resources :flags
+end
 
 map.root :controller => "home", :action => "index"
   # The priority is based upon order of creation: first created -> highest priority.

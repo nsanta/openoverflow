@@ -54,14 +54,6 @@ class AnswersController < ApplicationController
     end  
   end
   
-  def flag
-    @answer = Answer.find(params[:id])
-    @answer.update_attributes(:flag => true)
-    respond_to do |format| 
-      format.js {}
-    end
-  end
-  
   
   def select
     @answer = Answer.find(params[:id])

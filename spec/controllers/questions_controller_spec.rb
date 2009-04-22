@@ -232,21 +232,45 @@ describe QuestionsController do
     end
   end
 
-  describe "handling POST 'flag'" do
+  describe "handling GET 'tag'" do
     before :each do
-      @mock_question = mock_model(Question)
-      Question.should_receive(:find).with('1').and_return(@mock_question)
-      @mock_question.should_receive(:update_attributes).with(:flag => true)
-      post :flag , :id => '1'
+      @mock_results = @mock_questions = mock_model(Question)
+      Question.should_receive(:tagged_with).with('ruby' , :on => :tags).and_return(@mock_questions)
+      @mock_questions.should_receive(:paginate).with(:page => '1', :per_page => 20).and_return(@mock_results)
+      get :tag , :id => 'ruby' , :page => '1'
     end
     
     it "should be success" do
       response.should be_success
     end
     
+    it "should render template 'index'" do
+      response.should render_template('index')
+    end
     
-    it "should assign the question" do
-      assigns[:question].should == @mock_question
+    it "should assigns questions" do
+      assigns[:questions].should == @mock_results
+    end
+    
+  end
+
+  describe "handling GET 'unanswered'" do
+    before :each do
+      @mock_questions = mock_model(Question)
+      Question.should_receive(:unanswered).with('1').and_return(@mock_questions)
+      get :unanswered , :page => '1'
+    end
+    
+    it "should be success" do
+      response.should be_success
+    end
+    
+    it "should render template 'index'" do
+      response.should render_template('index')
+    end
+    
+    it "should assigns questions" do
+      assigns[:questions].should == @mock_questions
     end
     
   end

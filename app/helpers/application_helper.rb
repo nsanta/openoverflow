@@ -5,4 +5,13 @@ module ApplicationHelper
     !!current_user
   end
 
+
+  def tag_link(tag)
+    link_to(tag , tag_question_path(tag))
+  end
+
+  def tag_links(tags)
+    tags.map{|tag| tag_link(tag)}.join('')
+  end
+
 end

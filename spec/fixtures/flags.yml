@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  flaggeagle_id: 1
+  flaggeable_type: MyString
+  user: 
+  body: MyText
+
+two:
+  flaggeagle_id: 1
+  flaggeable_type: MyString
+  user: 
+  body: MyText
