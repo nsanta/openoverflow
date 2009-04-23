@@ -1,7 +1,7 @@
 class AddFlagsToContents < ActiveRecord::Migration
   def self.up
     %w(questions answers comments).each  do |table|
-      add_column table , :flag , :boolean , :default => 0
+      add_column table , :flag , :boolean , :default => false
     end  
   end
 

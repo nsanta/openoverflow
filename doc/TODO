@@ -1,21 +1,21 @@
-Admin
+Admin 2 Hs
   - Moderation on
     % Questions(delete or close)
     % Answers(delete)
     % User(suspend,ban)
-Questions
+Questions 1 Hs
  - Show 
    % render syntax highlightning from server side
-Answers
+Answers 1/2 Hs
  - Edit
    % render syntax highlightning from server side
-Badges
+Badges 2 Hs
  - Simple by votes and answer types
-Search
+Search 1 Hs
   - All
 
-Internacionalizacion:
+Internacionalizacion: 4 Hs
   - 100% internacionalizado
-Blog:
+Blog: 1Hs
   Mephisto engine
-
+Diseño: 40 Hs
