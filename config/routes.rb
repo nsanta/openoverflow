@@ -21,9 +21,9 @@ map.resources :answers, :member => {:vote => :post , :select => :post} do |answe
   answer.resources :flags
 end
 
-map.resources :comments do |comment|
-  comment.resources :flags
-end
+#map.resources :comments do |comment|
+#  comment.resources :flags
+#end
 
 map.root :controller => "home", :action => "index"
   # The priority is based upon order of creation: first created -> highest priority.

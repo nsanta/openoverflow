@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :require_user 
   before_filter :load_default_flash_messages 
+  after_filter :store_location
   
   def current_user
     return @current_user if defined?(@current_user)

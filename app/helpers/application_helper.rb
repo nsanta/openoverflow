@@ -14,4 +14,5 @@ module ApplicationHelper
     tags.map{|tag| tag_link(tag)}.join('')
   end
 
+
 end
