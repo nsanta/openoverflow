@@ -1,7 +1,7 @@
 %h1 Preguntas
 
 - @questions.each do |question|
-  = render :partial => 'index_question' , :locals => {:question => question}
+  = render :partial => 'questions/index_question' , :locals => {:question => question}
     
 = will_paginate @questions
 

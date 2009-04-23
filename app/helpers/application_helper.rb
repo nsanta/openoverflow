@@ -5,6 +5,9 @@ module ApplicationHelper
     !!current_user
   end
 
+  def is_admin?
+    current_user && current_user.admin
+  end
 
   def tag_link(tag)
     link_to(tag , tag_question_path(tag))

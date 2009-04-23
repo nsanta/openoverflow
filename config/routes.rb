@@ -25,6 +25,18 @@ end
 #  comment.resources :flags
 #end
 
+
+
+# == Admin Namespace
+
+map.namespace :admin do |admin|
+  admin.resource :dashboard , :controller => :dashboard
+  admin.resources :questions
+  admin.resources :answers
+  admin.resources :users
+end
+
+
 map.root :controller => "home", :action => "index"
   # The priority is based upon order of creation: first created -> highest priority.
 

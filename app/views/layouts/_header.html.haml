@@ -1,11 +1,8 @@
 #logo
-  %h1= link_to('Plimeo' , root_path)
+  %h1= link_to('?limeo' , root_path)
   %p Preguntas geeks, Respuestas geeks
 #menu
-  %ul
-    %li= link_to('Preguntas' , questions_path)
-    - if logged_in?
-      %li= link_to('Salir' , logout_path)
-    - else  
-      %li= link_to('Registarse' , register_path)
-      %li= link_to('Login' , login_path)
+  - if is_admin?
+    = render :partial => 'layouts/user_menu'
+  - else
+    = render :partial => 'layouts/admin_menu'
