@@ -1,7 +1,7 @@
 class Answer < ActiveRecord::Base
   
   
-  belongs_to :user
+  belongs_to :user , :counter_cache => :total_answers
   belongs_to :question  , :counter_cache => true
   has_many :votes , :as => :voteable
   has_many :comments

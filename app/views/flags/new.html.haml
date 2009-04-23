@@ -1,0 +1,6 @@
+- form_tag send("#{@flaggeable.class.to_s.underscore}_flags_path" , @flaggeable) do
+
+  = label_tag "Descripcion de reporte"
+  = text_area_tag :body
+  
+  = submit_tag "Enviar"

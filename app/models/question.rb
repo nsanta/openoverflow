@@ -2,7 +2,7 @@ class Question < ActiveRecord::Base
 
   acts_as_taggable_on :tags
 
-  belongs_to :user
+  belongs_to :user , :counter_cache => :total_questions
   has_many :votes , :as => :voteable
   has_many :answers
   

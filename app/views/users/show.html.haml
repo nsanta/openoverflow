@@ -2,4 +2,7 @@
 
 %p= "Nombre de Usuario: #{@user.login}"
 
-
+#activity
+  %p= "Preguntas: #{@user.total_questions}"
+  %p= "Respuestas: #{@user.total_answers}"
+  %p= "Votos: #{@user.total_votes}"

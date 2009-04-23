@@ -1,15 +1,8 @@
-Flags
-  - Questions
-  - Answers
-  - Comments
 Admin
   - Moderation on
     % Questions(delete or close)
     % Answers(delete)
-    % Comments(delete)
     % User(suspend,ban)
-User Profile 
- - Activity
 Questions
  - Show 
    % render syntax highlightning from server side

@@ -1,16 +1,19 @@
 User:
-  About Me
-
+ - About Me
+User Profile 
+ - Activity
 Trends
   - By languages
   - By questions
   - By Answers
   - By Comments
-  
-  
+Admin
+  - Moderation on
+    % Comments(delete)  
 Questions
   - Recomendation of staff
-
+Flags
+  - Comments
 Comments
  - Create
  - Edit

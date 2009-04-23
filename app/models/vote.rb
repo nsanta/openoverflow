@@ -1,7 +1,7 @@
 class Vote < ActiveRecord::Base
   VOTE_RANGE = [-1 , 1]
 
-  belongs_to :user
+  belongs_to :user , :counter_cache => :total_votes
   
   belongs_to :voteable , :polymorphic => true
   
