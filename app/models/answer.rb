@@ -18,6 +18,7 @@ class Answer < ActiveRecord::Base
       prev_selected.toggle!(:selected)
     end
     self.toggle!(:selected)
+    self.question.update_attribute(:answered , true)
     prev_selected
   end
   

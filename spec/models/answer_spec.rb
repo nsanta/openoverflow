@@ -60,6 +60,9 @@ describe Answer do
       it "should turn the new answer selected to true" do
         @new_selected_answer.reload.selected.should == true
       end
+      it "should the question flagged as answered" do
+        @new_selected_answer.quetion.answered.should == true
+      end
     end
   end
   

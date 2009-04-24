@@ -2,7 +2,7 @@ class Admin::DashboardController < ApplicationController
   before_filter :require_admin
 
 
-  def index
+  def show
   end
 
 end

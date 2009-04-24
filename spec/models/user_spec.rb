@@ -19,4 +19,13 @@ describe User do
       User.should have_many(:answers_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Answer'")
     end
   end
+  
+  describe "validations" do
+    it "should total_points not be less than 1" do
+      user = User.create(:login => 'test' , :password => 'abc123' , :password_confirmation => 'abc123' , :email => 'test@test.com')
+      user.total_points = 0
+      user.should_not be_valid
+    end
+  end
+  
 end

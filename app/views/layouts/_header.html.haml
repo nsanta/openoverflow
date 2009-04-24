@@ -3,6 +3,6 @@
   %p Preguntas geeks, Respuestas geeks
 #menu
   - if is_admin?
-    = render :partial => 'layouts/user_menu'
-  - else
     = render :partial => 'layouts/admin_menu'
+  - else
+    = render :partial => 'layouts/user_menu'
