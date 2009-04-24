@@ -11,9 +11,19 @@ class Question < ActiveRecord::Base
   validates_presence_of :title , :body , :user
   validates_length_of :title , :within => 3..40
   
+  #== Callbacks
+  after_create {|record| record.add_points(20)}
  
   def unanswered (page = 1)
     self.paginate(:conditions => "answers_count > 0" , :order => 'created_at DESC' , :page => page , :per_page => 20)
+  end
+  
+  
+  
+  
+  def add_points(points = 1)
+    self.user.total_points += points
+    self.user.save
   end
   
 end

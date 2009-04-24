@@ -11,8 +11,10 @@ class Vote < ActiveRecord::Base
   validates_uniqueness_of :user_id  , :scope => [:voteable_id , :voteable_type]
   
   # == Callbacks
-  after_create {|record| record.vote_averages_of_voteables_on_create}
-  after_update {|record| record.vote_averages_of_voteables_on_update}
+  after_create {|record| record.vote_averages_of_voteables_on_create; record.add_points(10)}
+  after_update {|record| record.vote_averages_of_voteables_on_update; record.add_points(-10)}
+  
+  
   
   def vote_averages_of_voteables_on_create
     self.voteable.votes_average += self.vote
@@ -22,6 +24,11 @@ class Vote < ActiveRecord::Base
   def vote_averages_of_voteables_on_update
     self.voteable.votes_average += self.vote * 2
     self.voteable.save
+  end
+  
+  def add_points(points = 1)
+    self.user.total_points += points
+    self.user.save
   end
   
 end

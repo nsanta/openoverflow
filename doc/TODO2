@@ -1,28 +1,27 @@
-User:
+User: 2 Hs
  - About Me
-User Profile 
+User Profile 2 Hs
  - Activity
-Trends
+Trends 10 Hs
   - By languages
   - By questions
   - By Answers
   - By Comments
-Admin
+Admin 1 Hs
   - Moderation on
     % Comments(delete)  
-Questions
+Questions 1 Hs
   - Recomendation of staff
-Flags
+Flags 1/2 Hs
   - Comments
-Comments
+Comments 2 Hs
  - Create
  - Edit
  - Show
-
-- Host openid
-  
-API
+Badges 20 Hs
+ - by goals
+ 
+Host openid 2 Hs
+API 80 Hs
   - oAuth
-  
-Badges
-  - Add more
+
