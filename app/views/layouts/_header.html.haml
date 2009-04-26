@@ -1,6 +1,6 @@
 #logo
-  %h1= link_to('?limeo' , root_path)
-  %p Preguntas geeks, Respuestas geeks
+  %h1= link_to(APP_CONFIG['site_name'] , root_path)
+  %p= APP_CONFIG['site_tagline']
 #menu
   - if is_admin?
     = render :partial => 'layouts/admin_menu'

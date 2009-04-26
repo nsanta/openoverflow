@@ -138,3 +138,22 @@ de:
         odd: "muss ungerade sein"
         even: "muss gerade sein"
       models:
+
+  question:
+    title: Titel
+    body: Frage
+    create_button: Fragen!
+    tags: 'Tags'
+  model:
+    questions: Fragen
+    answers: Antworten
+    votes: Stimmen
+    visits: Besuche
+  app:
+    register: anmelden
+    login: login
+    logout: logout
+    users: users
+    about: Über uns
+    contact: Kontakt
+    terms: Nutzungsbedingungen

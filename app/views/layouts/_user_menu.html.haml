@@ -1,7 +1,7 @@
 %ul
-  %li= link_to('Preguntas' , questions_path)
+  %li= link_to(t('model.questions'), questions_path)
   - if logged_in?
-    %li= link_to('Salir' , logout_path)
+    %li= link_to(t('app.logout'), logout_path)
   - else  
-    %li= link_to('Registarse' , register_path)
-    %li= link_to('Login' , login_path)
+    %li= link_to(t('app.register'), register_path)
+    %li= link_to(t('app.login'), login_path)

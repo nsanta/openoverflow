@@ -166,8 +166,22 @@
       words_connector: ", "
       two_words_connector: " y "
       last_word_connector: " y "
+
   question:
     title: Título
     body: Pregunta
     create_button: Preguntar!
     tags: 'Tags'
+  model:
+    questions: preguntas
+    answers: respuestas
+    votes: votos
+    visits: vistasss
+  app:
+    register: registarse
+    login: login
+    logout: Salir
+    users: Usuarios
+    about: Sobre el sitio
+    contact: Contáctenos
+    terms: Términos de uso

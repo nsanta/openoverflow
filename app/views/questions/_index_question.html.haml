@@ -1,12 +1,12 @@
 .home_question
   %p.data
-    = "Vistas"
+    =t 'model.visits'
     %b= question.total_views
   %p.data
-    = "Respuestas"
+    =t 'model.answers'
     %b= question.answers_count
   %p.data
-    = "Votos"
+    =t 'model.votes'
     %b= question.votes_average
   %h2.title= link_to(question.title , question)
   %p.tags
