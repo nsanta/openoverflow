@@ -13,7 +13,7 @@
     = "Tags: "
     = tag_links(question.tag_list)  
   %p.meta
-    = image_tag(question.user.avatar.url)
+    = image_tag(question.user.avatar.url) rescue 'no image'
     %small
       = "Posted by:"
-      = link_to(question.user.login , question.user)
+      = link_to(question.user.login , question.user) rescue 'no user'

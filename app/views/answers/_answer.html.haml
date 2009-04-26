@@ -1,6 +1,6 @@
 .answer
   %p= answer.body
-  %p= "By: #{answer.user.login}"
+  %p= "By: #{answer.user.login}" rescue "UNKNOWN"
   %p= link_to('Reportar' , new_answer_flag_path(@question) , :rel => 'facebox')
   = render :partial => 'common/vote_box' , :locals => {:model => answer}
   = link_to((answer.selected ? 'selected' : 'unselected') , select_answer_path(answer) , :id => "answer_link_#{answer.id}" , :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")

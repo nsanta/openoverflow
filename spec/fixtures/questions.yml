@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  body: MyText
+  title: What is the meaning of Life?
+  body: Any answers welcome....
   user: 
 
 two:
-  title: MyString
-  body: MyText
+  title: What is 7*6
+  body: Please cite an authority.
   user: 
