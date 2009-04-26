@@ -1,0 +1,10 @@
+h1. Welcome
+
+An open source Question and Answer application that is inspired by stackoverflow.com.
+
+
+h1. Prerequisites
+
+You need PostgreSQL, and the ruby-pg gem.
+
+  sudo gem install ruby-pg
