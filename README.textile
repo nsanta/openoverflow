@@ -1,6 +1,7 @@
 h1. Welcome
 
-An open source Question and Answer application that is inspired by stackoverflow.com.
+OpenOverflow is an open source Question and Answer application that is
+inspired by www.stackoverflow.com. 
 
 
 h1. Prerequisites
@@ -8,3 +9,19 @@ h1. Prerequisites
 You need PostgreSQL, and the ruby-pg gem.
 
   sudo gem install ruby-pg
+
+
+OpenOverflow works for me on Mac OS X, with Rails 2.3.2.
+
+
+h1. Configuration
+
+h2. Internationalization
+You can set your own locale in config/initializers/locale.rb. So far,
+there are English, Spanish (Argentina), and German versions available.
+Locale files are in config/locales. 
+
+Note: internationalization is not yet finished.
+
+h2. Site name etc.
+A few configurations can be made in config/config.yml.
