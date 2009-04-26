@@ -2,10 +2,20 @@
 
 one:
   title: What is the meaning of Life?
-  body: Any answers welcome....
+  body: Any answers welcome...
   user: 
 
 two:
-  title: What is 7*6
-  body: Please cite an authority.
-  user: 
+  title: What is 7*6?
+  body: I know I had it written down somewhere, please help!
+  user:
+
+three:
+  title: How do you make fire with a bottle of water?
+  body: My friend says it is possible, any ideas welcome.
+  user:
+
+four:
+  title: Just testing
+  body:
+  user:
