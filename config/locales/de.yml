@@ -144,11 +144,18 @@ de:
     body: Frage
     create_button: Fragen!
     tags: 'Tags'
+  answer:
+    selected: ausgewählt
+    unselected: nicht ausgewählt
   model:
     questions: Fragen
     answers: Antworten
     votes: Stimmen
     visits: Besuche
+    by: von
+  action:
+    flag: melden
+    answer: antworten
   app:
     register: anmelden
     login: login

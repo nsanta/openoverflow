@@ -8,10 +8,18 @@ en:
     body: question
     create_button: Ask!
     tags: 'Tags'
+  answer:
+    selected: selected
+    unselected: unselected
   model:
     questions: questions
     answers: answers
     votes: votes
+    visits: visits
+    by: by
+  action:
+    flag: flag
+    answer: answer
   app:
     register: register
     login: login

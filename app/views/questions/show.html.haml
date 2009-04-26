@@ -4,10 +4,10 @@
   %p.tags= tag_links(@question.tag_list)
   = render :partial => 'common/vote_box' , :locals => {:model => @question}
   %p{:id => "flag_for_question_#{@question.id}"}
-    = link_to('Reportar' , new_question_flag_path(@question) , :rel => 'facebox')
+    = link_to(t('action.flag') , new_question_flag_path(@question) , :rel => 'facebox')
   
 #answers
-  = link_to("Responder" , '#' , :class => 'answer_new_form_link')
+  = link_to(t('action.answer'), '#' , :class => 'answer_new_form_link')
   %div{:id => 'answer_new_form'}
     = render :partial => 'answers/new' , :locals => {:question => @question}
   = render :partial => 'answers/answer' , :collection => @question.answers

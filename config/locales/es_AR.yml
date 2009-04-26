@@ -172,11 +172,18 @@
     body: Pregunta
     create_button: Preguntar!
     tags: 'Tags'
+  answer:
+    selected: selected
+    unselected: unselected
   model:
     questions: preguntas
     answers: respuestas
     votes: votos
-    visits: vistasss
+    visits: vistas
+    by: by
+  action:
+    flag: Reportar
+    answer: Responder
   app:
     register: registarse
     login: login
