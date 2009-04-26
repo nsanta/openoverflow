@@ -1,7 +1,7 @@
 h1. Welcome
 
 OpenOverflow is an open source Question and Answer application that is
-inspired by www.stackoverflow.com. 
+inspired by "stackoverflow.com":http://www.stackoverflow.com. 
 
 
 h1. Prerequisites
