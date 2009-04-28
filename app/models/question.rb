@@ -30,6 +30,7 @@ class Question < ActiveRecord::Base
   
   #== Callbacks
   #after_create {|record| record.add_points(20)}
+  # before_save {|record| record.parse_source_code_in_body}
  
   def unanswered (page = 1)
     self.paginate(:conditions => "answers_count > 0" , :order => 'created_at DESC' , :page => page , :per_page => 20)
@@ -42,5 +43,19 @@ class Question < ActiveRecord::Base
     self.user.total_points += points
     self.user.save
   end
+  
+  private
+  
+#  def parse_source_code_in_body
+#    if self.body.changed? || self.new_record?
+#      doc = Nokogiri::HTML.parse(self.body)
+#      doc.search('pre').each do |pre|
+#        source_code_type = pre['class']
+#        output = `source-highlight --src-lang #{source_code_type} --out-format html < "#{pre}"`
+#      end
+#      self.parse_body = 
+#    end
+#  end
+  
   
 end
