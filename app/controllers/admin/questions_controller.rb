@@ -13,7 +13,8 @@ class Admin::QuestionsController < ApplicationController
   
   
   def ban
-    @question = Question.find(params[:id])
+    @flag = Flag.find(params[:id])
+    @question = @flag.flaggeable
     @question.toggle!(:banned)
     if @question.banned
       flash[:notice] = "La pregunta a sido restringida"

@@ -45,8 +45,9 @@ describe Admin::QuestionsController do
   describe "handling POST 'ban'" do
     before :each do
       @mock_question = mock_model(Question , :banned => true)
+      @mock_flag = mock_model(Flag , :flaggeable => @mock_question)
       @mock_question.should_receive(:toggle!).with(:banned)
-      Question.should_receive(:find).with('1').and_return(@mock_question)
+      Flag.should_receive(:find).with('1').and_return(@mock_flag)
       
     end
     

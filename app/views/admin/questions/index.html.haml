@@ -1,0 +1,8 @@
+- @flags.each do |flag|
+  .flag
+    %p= flag.body
+    %p.user= "By: #{link_to(flag.user.login , admin_user_path(flag.user))}"
+    %p.flaggable_links
+      = link_to( 'Ver' , admin_question_path(flag.flaggeable), :rel => 'facebox')
+      = link_to(flag.flaggeable.banned ? "Unban" : "Ban" ,  ban_admin_question_path(flag) , :class => 'ban_link')
+      = link_to("Borrar Reportacion" ,  admin_question_path(flag) , :class => 'delete_flag')

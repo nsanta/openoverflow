@@ -4,7 +4,7 @@
 # Table name: flags
 #
 #  id              :integer         not null, primary key
-#  flaggeagle_id   :integer
+#  flaggeable_id   :integer
 #  flaggeable_type :string(255)
 #  user_id         :integer
 #  body            :text
@@ -21,8 +21,13 @@ class Flag < ActiveRecord::Base
   
   after_create {|record| record.add_points(5)}
   
-  
   named_scope :questions , :conditions => "flaggeable_type = 'Question'" , :order => 'created_at DESC'
   named_scope :answers , :conditions => "flaggeable_type = 'Answer'", :order => 'created_at DESC'
+ 
+  def add_points(points = 1)
+    self.user.total_points ||= 0
+    self.user.total_points += points
+    self.user.save
+  end
   
 end
