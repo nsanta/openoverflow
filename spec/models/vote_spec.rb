@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20090424001630
+#
+# Table name: votes
+#
+#  id            :integer         not null, primary key
+#  vote          :integer
+#  voteable_type :string(255)
+#  voteable_id   :integer
+#  user_id       :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Vote do

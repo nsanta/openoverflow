@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20090424001630
+#
+# Table name: answers
+#
+#  id            :integer         not null, primary key
+#  body          :text
+#  user_id       :integer
+#  question_id   :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  votes_average :integer         default(0)
+#  selected      :boolean
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
