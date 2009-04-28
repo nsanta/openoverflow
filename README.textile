@@ -28,4 +28,9 @@ Locale files are in config/locales.
 
 Note: internationalization is not yet finished.
 
+h2. Contributors
+
+ *Nicolas Santa
+ *Ariel Diaz Bemejo
+ *Matthias Berth 
 
