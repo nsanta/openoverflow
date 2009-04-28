@@ -1,6 +1,6 @@
 %ul
-  %li= link_to('Preguntas' , questions_path)
   - if logged_in?
+    %li= link_to('Perfil' , user_path(current_user))
     %li= link_to('Salir' , logout_path)
   - else  
     %li= link_to('Registarse' , register_path)

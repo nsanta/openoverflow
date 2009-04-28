@@ -20,7 +20,11 @@
             = content_tag :div, msg, :id => "flash_#{name}" 
           = yield 
         #sidebar
-          = render :partial => '/layouts/sidebar'
+          .content_box
+          .content_box
+            = render :partial => '/layouts/cloud'
+          .content_box
+            = render :partial => '/layouts/advertisement'
         #br{:style => "clear: both;"}
     #wrapper2
       #footer

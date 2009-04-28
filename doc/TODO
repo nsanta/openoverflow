@@ -3,15 +3,15 @@ Admin 2 Hs
     % Questions(delete or close)
     % Answers(delete)
     % User(suspend,ban)
-Questions 1 Hs
- - Show 
-   % render syntax highlightning from server side
-Answers 1/2 Hs
- - Edit
-   % render syntax highlightning from server side
 Internacionalizacion: 4 Hs
   - 100% internacionalizado
 Blog: 1Hs
   Mephisto engine
 Diseño: 40 Hs
 Marketing: 10hs per week
+
+FeedBack 2hs
+  - New
+  - Link on template
+  
+Documentation 10hs

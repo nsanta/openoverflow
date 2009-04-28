@@ -18,7 +18,7 @@
   = javascript_include_tag('answer/new')
   = javascript_include_tag('answer/create')
   = javascript_include_tag('answer/select')
-  = javascript_include_tag('syntax_highlighter/shCore.js')
+  = javascript_include_tag('syntax_highlighter/shCore')
   - %w(shBrushBash.js	shBrushCSharp.js 	shBrushCpp.js shBrushCss.js	shBrushDelphi.js 	shBrushDiff.js shBrushGroovy.js	shBrushJScript.js shBrushJava.js	shBrushPerl.js shBrushPhp.js shBrushPlain.js shBrushPython.js shBrushRuby.js shBrushScala.js shBrushSql.js shBrushVb.js	shBrushXml.js).each do |sh|
     = javascript_include_tag("syntax_highlighter/#{sh}")
   = javascript_tag("SyntaxHighlighter.config.clipboardSwf = 'javascripts/syntax_highlighter/clipboard.swf';SyntaxHighlighter.all();")
@@ -26,4 +26,4 @@
   
   
 - content_for :stylesheets do
-  = stylesheet_include_tag('syntax_highlighter')
+  = stylesheet_link_tag('shThemeDefault' , 'shCore')
