@@ -41,6 +41,7 @@ class Vote < ActiveRecord::Base
   end
   
   def add_points(points = 1)
+    self.user.total_points ||= 0
     self.user.total_points += points
     self.user.save
   end

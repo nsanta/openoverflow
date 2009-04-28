@@ -28,8 +28,14 @@ class Question < ActiveRecord::Base
   validates_presence_of :title , :body , :user
   validates_length_of :title , :within => 3..40
   
+  
+  named_scope :unbanned , :conditions => 'banned = FALSE'
+  named_scope :banned , :conditions => 'banned = TRUE'
+  
+  
+  
   #== Callbacks
-  #after_create {|record| record.add_points(20)}
+  after_create {|record| record.add_points(20)}
   # before_save {|record| record.parse_source_code_in_body}
  
   def unanswered (page = 1)
@@ -39,7 +45,10 @@ class Question < ActiveRecord::Base
   
   
   
+  
+  
   def add_points(points = 1)
+    self.user.total_points ||= 0
     self.user.total_points += points
     self.user.save
   end

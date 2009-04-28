@@ -69,4 +69,10 @@ describe Question do
     end
     
   end  
+  
+  describe "named scopes" do
+    
+  end
+  
+  
 end

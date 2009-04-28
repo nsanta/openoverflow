@@ -31,9 +31,9 @@ end
 
 map.namespace :admin do |admin|
   admin.resource :dashboard , :controller => :dashboard
-  admin.resources :questions
-  admin.resources :answers
-  admin.resources :users
+  admin.resources :questions , :member => {:ban => :post}
+  admin.resources :answers , :member => {:ban => :post}
+  admin.resources :users , :member => {:ban => :post}
 end
 
 

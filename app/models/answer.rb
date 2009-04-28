@@ -23,7 +23,7 @@ class Answer < ActiveRecord::Base
   
   validates_presence_of :user , :question , :body
   
-  #after_create {|record| record.add_points(50)}
+  after_create {|record| record.add_points(50)}
   
   
   # == InstanceMethods
@@ -40,6 +40,7 @@ class Answer < ActiveRecord::Base
   
   
   def add_points(points = 1)
+    self.user.total_points ||= 0
     self.user.total_points += points
     self.user.save
   end
