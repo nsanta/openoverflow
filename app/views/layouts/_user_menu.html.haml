@@ -1,7 +1,8 @@
 %ul
+  %li= link_to('Feedback', new_feedback_path, :rel => 'facebox')
   - if logged_in?
-    %li= link_to('Perfil' , user_path(current_user))
-    %li= link_to('Salir' , logout_path)
+    %li= link_to('Perfil', user_path(current_user))
+    %li= link_to('Salir', logout_path)
   - else  
-    %li= link_to('Registarse' , register_path)
-    %li= link_to('Login' , login_path)
+    %li= link_to('Registarse', register_path)
+    %li= link_to('Login', login_path)

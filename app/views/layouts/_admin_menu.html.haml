@@ -1,6 +1,7 @@
 %ul
-  %li= link_to('Preguntas' , admin_questions_path)
-  %li= link_to('Respuestas' , admin_answers_path)
-  %li= link_to('Usuarios' , admin_users_path)
-  %li= link_to('Salir' , logout_path)
+  %li= link_to('Feedback', new_feedback_path, :rel => 'facebox')
+  %li= link_to('Preguntas', admin_questions_path)
+  %li= link_to('Respuestas', admin_answers_path)
+  %li= link_to('Usuarios', admin_users_path)
+  %li= link_to('Salir', logout_path)
   

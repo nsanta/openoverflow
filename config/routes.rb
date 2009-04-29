@@ -1,43 +1,44 @@
 ActionController::Routing::Routes.draw do |map|
 
-map.login '/login' , :controller => "user_sessions", :action => "new"
+  map.login '/login', :controller => "user_sessions", :action => "new"
+  map.logout '/logout', :controller => "user_sessions", :action => "destroy"
+  map.register '/register', :controller => "users", :action => "new"
 
-map.logout '/logout' , :controller => "user_sessions", :action => "destroy"
-map.register '/register' , :controller => "users", :action => "new"
+  map.resources :users
+  map.resource :user_session
+  map.resource :account, :controller => "users"
 
-map.resources :users
-map.resource :user_session
-map.resource :account, :controller => "users"
+  # Questions
+  map.resources :questions, :member => {:vote => :post, :tag => :get},
+                            :collection => {:unanswered => :get} do |question|
+    question.resources :answers
+    question.resources :flags
+  end
 
+  # Answers
+  map.resources :answers, :member => {:vote => :post, :select => :post} do |answer|
+    answer.resources :comments
+    answer.resources :flags
+  end
 
-map.resources :questions , :member => {:vote => :post , :tag => :get} ,
-                           :collection => {:unanswered => :get} do |question|
-  question.resources :answers
-  question.resources :flags
-end
-
-map.resources :answers, :member => {:vote => :post , :select => :post} do |answer|
-  answer.resources :comments
-  answer.resources :flags
-end
-
-#map.resources :comments do |comment|
-#  comment.resources :flags
-#end
-
-
-
-# == Admin Namespace
-
-map.namespace :admin do |admin|
-  admin.resource :dashboard , :controller => :dashboard
-  admin.resources :questions
-  admin.resources :answers
-  admin.resources :users
-end
+  #map.resources :comments do |comment|
+  #  comment.resources :flags
+  #end
 
 
-map.root :controller => "home", :action => "index"
+  # Feedbacks system
+  map.resources :feedbacks
+
+  # == Admin Namespace
+
+  map.namespace :admin do |admin|
+    admin.resource :dashboard, :controller => :dashboard
+    admin.resources :questions
+    admin.resources :answers
+    admin.resources :users
+  end
+
+  map.root :controller => "home", :action => "index"
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

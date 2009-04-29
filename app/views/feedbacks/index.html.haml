@@ -1,0 +1,25 @@
+%h1 Sugerencias recibidas
+
+%table
+  %tr
+    %th Usuario
+    %th Email
+    %th Titulo
+    %th Sugerencia/Duda/Consulta
+    %th Opciones
+
+  - @feedbacks.each do |feedback|
+    %tr
+      %td
+        =h feedback.user
+      %td 
+        =h feedback.email
+      %td 
+        =h feedback.title
+      %td 
+        =h feedback.body
+      %td
+        = link_to 'Show', feedback
+        = link_to 'Edit', edit_feedback_path(feedback)
+        = link_to 'Destroy', feedback, :confirm => '¿Esta seguro de continuar?', :method => :delete
+

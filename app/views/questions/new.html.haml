@@ -4,9 +4,7 @@
 
 - form_for @question do |f|
 
-  = render :partial => 'form' , :locals => {:f => f}
+  = render :partial => 'form', :locals => {:f => f}
   
   = submit_tag t("question.create_button")
-
-
 

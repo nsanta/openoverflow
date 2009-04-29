@@ -171,3 +171,10 @@
     body: Pregunta
     create_button: Preguntar!
     tags: 'Tags'
+  feedback:
+    title: Título
+    email: Correo Electronico
+    body: Sugerencia/Duda/Pregunta
+    create_button: Enviar!
+
+
