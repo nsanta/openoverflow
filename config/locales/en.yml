@@ -2,4 +2,29 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  
+  question:
+    title: title
+    body: question
+    create_button: Ask!
+    tags: 'Tags'
+  answer:
+    selected: selected
+    unselected: unselected
+  model:
+    questions: questions
+    answers: answers
+    votes: votes
+    visits: visits
+    by: by
+  action:
+    flag: flag
+    answer: answer
+  app:
+    register: register
+    login: login
+    logout: logout
+    users: users
+    about: About
+    contact: Contact
+    terms: Terms of use

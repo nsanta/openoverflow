@@ -166,6 +166,7 @@
       words_connector: ", "
       two_words_connector: " y "
       last_word_connector: " y "
+
   question:
     title: Título
     body: Pregunta
@@ -176,5 +177,25 @@
     email: Correo Electronico
     body: Sugerencia/Duda/Pregunta
     create_button: Enviar!
-
+  answer:
+    selected: selected
+    unselected: unselected
+  model:
+    questions: preguntas
+    answers: respuestas
+    votes: votos
+    visits: vistas
+    by: by
+  action:
+    flag: Reportar
+    answer: Responder
+  app:
+    register: registarse
+    login: login
+    logout: Salir
+    users: Usuarios
+    about: Sobre el sitio
+    contact: Contáctenos
+    terms: Términos de uso
+    feedbacks: Sugerencias
 

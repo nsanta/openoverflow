@@ -14,3 +14,4 @@ config/database.yml
 config/*.sphinx.conf
 db/sphinx
 public/system
+config/database.yml~

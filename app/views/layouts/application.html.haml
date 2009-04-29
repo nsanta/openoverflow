@@ -15,12 +15,15 @@
     #br{:style => "clear: both;"}  
     #wrapper
       #page
+        #search
+          = render :partial => '/layouts/search'
         #content
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}" 
           = yield 
         #sidebar
           .content_box
+            %h2 HINTS
           .content_box
             = render :partial => '/layouts/cloud'
           .content_box
@@ -29,6 +32,6 @@
     #wrapper2
       #footer
         %p#legal
-          = link_to('Sobre el sitio', '#')
-          = link_to('Contáctenos', '#')
-          = link_to('Términos de uso', '#')
+          = link_to(t('app.about'), '#')
+          = link_to(t('app.contact'), '#')
+          = link_to(t('app.terms'), '#')
