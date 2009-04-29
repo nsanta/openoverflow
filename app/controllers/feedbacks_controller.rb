@@ -19,11 +19,11 @@ class FeedbacksController < ApplicationController
     end
     respond_to do |format|
       if @feedback.save
-        flash[:notice] = 'Su consulta ha sido creada'
+        flash[:notice] = t('flash.notice.feedback.create.valid')
         format.html { redirect_to(root_path) }
         format.xml  { render :xml => @feedback, :status => :created, :location => @feedback }
       else
-        flash[:notice] = 'Su consulta NO ha sido creada'
+        flash[:notice] = t('flash.notice.feedback.create.invalid')
         format.html { render :action => "new" }
         format.xml  { render :xml => @feedback.errors, :status => :unprocessable_entity }
       end

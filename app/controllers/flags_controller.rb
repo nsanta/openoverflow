@@ -12,9 +12,9 @@ class FlagsController < ApplicationController
   def create
     @flag = Flag.new(:user => current_user , :flaggeable => @flaggeable , :body => params[:body])
     if @flag.save
-      flash[:notice]= 'Tu has reportado este contenido exitosamente'
+      flash[:notice]= t("flash.notice.flag.create.valid")
     else
-      flash[:notice]= 'Tu reportacion tuvo un problema, vuelve a intentar'
+      flash[:notice]= t("flash.notice.flag.create.invalid")
     end
     redirect_back_or_default(root_path)
   end

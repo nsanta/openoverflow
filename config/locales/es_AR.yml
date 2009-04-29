@@ -206,6 +206,17 @@
   flash:
     notice:
       question:
+        create:
+          valid: La pregunta ha sido creada
+          invalid: La pregunta NO ha sido creada
+        update:
+          valid: La pregunta ha sido actualizada
+          invalid: La pregunta NO ha sido actualizada
+        vote:
+          valid: Tu voto NO a sido guardado
+          invalid: Tu voto a sido guardado
+          update: Tu voto ha sido actualizado
+          nochange: Ya has votado esta pregunta
       answer:
         create:
           valid: La respuesta ha sido publicada
@@ -221,7 +232,24 @@
         select:
           valid: Tu seleccion ha sido guardada
           invalid: Tu no estas habilitado para seleccionar la respuesta
-      vote:
       user:
+        create:
+          valid: Tu cuenta ha sido registrada
+          invalid: Tu cuenta NO ha sido registrada
+        update:
+          valid: Cuenta Actualizada
+          invalid: Cuenta NO Actualizada
       feedback:
+        create:
+          valid: Su consulta ha sido creada
+          invalid: Su consulta NO ha sido creada
       flag:
+        create:
+          invalid: Tu has reportado este contenido exitosamente
+          valid: Tu reportacion tuvo un problema, vuelve a intentar
+      session:
+        create:
+          valid: Has ingresado exitosamente
+          invalid: A surgido un problema en el ingreso, vuelva a intentarlo
+        destroy:
+          valid: Has salido exitosamente

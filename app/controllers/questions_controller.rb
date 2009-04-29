@@ -16,10 +16,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(params[:question])
     @question.user = current_user
     if @question.save
-      flash[:notice] = 'La pregunta ha sido creada'
+      flash[:notice] = t('flash.notice.question.create.valid')
       redirect_to questions_path
     else
-      flash[:notice] = 'La pregunta NO ha sido creada'
+      flash[:notice] = t('flash.notice.question.create.invalid')
       render 'new'
     end
   end
@@ -35,10 +35,10 @@ class QuestionsController < ApplicationController
   def update
     @question = current_user.questions.find(params[:id])
     if @question.update_attributes(params[:question])
-      flash[:notice] = 'La pregunta ha sido actualizada'
+      flash[:notice] = t('flash.notice.question.update.valid')
       redirect_to @question
     else
-      flash[:notice] = 'La pregunta NO ha sido actualizada'
+      flash[:notice] = t('flash.notice.question.update.invalid')
       render 'edit'
     end
   end
@@ -48,17 +48,17 @@ class QuestionsController < ApplicationController
     @vote = @question.votes.find_by_user_id(current_user.id)
     if @vote
       if @vote.vote.to_s == params[:vote]
-        flash[:notice] = "Ya has votado esta pregunta"
+        flash[:notice] = t('flash.notice.question.vote.nochange')
       else
         @vote.update_attributes(:vote => params[:vote])
-        flash[:notice] = "Tu voto ha sido actualizado"
+        flash[:notice] = t('flash.notice.question.vote.update')
       end
     else
       @vote = @question.votes.build(:user => current_user , :vote => params[:vote])
       if @vote.save
-        flash[:notice] = "Tu voto a sido guardado"
+        flash[:notice] = t('flash.notice.question.vote.valid')
       else
-        flash[:notice] = "Tu voto NO a sido guardado"
+        flash[:notice] = t('flash.notice.question.vote.invalid')
       end
     end
     respond_to do |format|
