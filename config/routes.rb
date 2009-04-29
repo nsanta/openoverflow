@@ -25,6 +25,8 @@ ActionController::Routing::Routes.draw do |map|
   #  comment.resources :flags
   #end
 
+  map.resources :search ,  :controller => 'search'
+
 
   # Feedbacks system
   map.resources :feedbacks

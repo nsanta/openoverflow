@@ -6,9 +6,9 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.build(:user => current_user , :body => params[:body])
     if @answer.save
-      flash[:notice] = "La respuesta ha sido publicada"
+      flash[:notice] = t('flash.notice.answer.create.valid')
     else
-      flash[:notice] = "La respuesta NO ha sido publicada"
+      flash[:notice] = t('flash.notice.answer.create.invalid')
     end
     respond_to do |format|
       format.js {}
@@ -22,9 +22,9 @@ class AnswersController < ApplicationController
   def update
     @answer = current_user.answers.find(params[:id])
     if @answer.save
-      flash[:notice] = "La respuesta ha sido actualizada"
+      flash[:notice] = t('flash.notice.answer.update.valid')
     else
-      flash[:notice] = "La respuesta NO ha sido actualizada"
+      flash[:notice] = t('flash.notice.answer.update.invalid')
     end
     respond_to do |format|
       format.js {}
@@ -36,17 +36,17 @@ class AnswersController < ApplicationController
     @vote = @answer.votes.find_by_user_id(current_user.id)
     if @vote
       if @vote.vote.to_s == params[:vote]
-        flash[:notice] = "Ya has votado esta pregunta"
+        flash[:notice] = t('flash.notice.answer.vote.nochange')
       else
         @vote.update_attributes(:vote => params[:vote])
-        flash[:notice] = "Tu voto ha sido actualizado"
+        flash[:notice] = t('flash.notice.answer.vote.update')
       end
     else
       @vote = @answer.votes.build(:user => current_user , :vote => params[:vote])
       if @vote.save
-        flash[:notice] = "Tu voto a sido guardado"
+        flash[:notice] = t('flash.notice.answer.vote.valid')
       else
-        flash[:notice] = "Tu voto NO a sido guardado"
+        flash[:notice] = t('flash.notice.answer.vote.invalid')
       end
     end
     respond_to do |format|
@@ -59,9 +59,9 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     if @answer.question.user == current_user
       @prev_selected = @answer.select!
-      flash[:notice] = "Tu seleccion ha sido guardada"
+      flash[:notice] = t('flash.notice.answer.select.valid')
     else
-      flash[:notice] = "Tu no estas habilitado para seleccionar la respuesta"
+      flash[:notice] = t('flash.notice.answer.select.invalid')
     end  
     respond_to do |format|
       format.js {}

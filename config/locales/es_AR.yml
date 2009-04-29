@@ -178,14 +178,14 @@
     body: Sugerencia/Duda/Pregunta
     create_button: Enviar!
   answer:
-    selected: selected
-    unselected: unselected
+    selected: elegido
+    unselected: no elegido
   model:
     questions: preguntas
     answers: respuestas
     votes: votos
-    visits: vistas
-    by: by
+    visits: visitas
+    by: Por
   action:
     flag: Reportar
     answer: Responder
@@ -198,4 +198,30 @@
     contact: Contáctenos
     terms: Términos de uso
     feedbacks: Sugerencias
-
+    remember_me: Recordarme
+    posted_by: Publicado Por
+    profile: Perfil
+    new_question: Nueva Pregunta
+    search: Buscar
+  flash:
+    notice:
+      question:
+      answer:
+        create:
+          valid: La respuesta ha sido publicada
+          invalid: La respuesta NO ha sido publicada
+        update:
+          valid: La respuesta ha sido actualizada
+          invalid: La respuesta NO ha sido actualizada
+        vote:
+          valid: Tu voto a sido guardado
+          invalid: Tu voto NO a sido guardado
+          update: Tu voto ha sido actualizado
+          nochange: Ya has votado esta pregunta
+        select:
+          valid: Tu seleccion ha sido guardada
+          invalid: Tu no estas habilitado para seleccionar la respuesta
+      vote:
+      user:
+      feedback:
+      flag:
