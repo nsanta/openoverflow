@@ -205,6 +205,13 @@
     search: Buscar
   flash:
     notice:
+      application:
+        require_admin:
+          invalid: Debe estar loggeado para acceder
+        require_user:
+          invalid: Debe estar loggeado para acceder
+        require_no_user:
+          invalid: Debe salir primero para acceder
       question:
         create:
           valid: La pregunta ha sido creada
