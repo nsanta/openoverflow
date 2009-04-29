@@ -1,2 +1,8 @@
-- @questions.each do |question|
-  = render :partial => 'questions/index_question' , :locals => {:question => question}
+-if @questions.nil? || @questions.empty?
+  No questions.
+-else
+  -@questions.each do |question|
+    = render :partial => 'questions/index_question' , :locals => {:question => question}
+
+
+  

@@ -15,14 +15,17 @@
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  body: MyText
+one_1:
+  body: The meaning of life is unclear.
   user: 
-  question: 
+  question: one
 
-two:
-  title: MyString
-  body: MyText
+one_2:
+  body: The meaning of life not to ask stupid questions.
+  user:
+  question: one
+
+two_1:
+  body: Use google.
   user: 
-  question: 
+  question: two
