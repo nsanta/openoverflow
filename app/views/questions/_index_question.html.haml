@@ -13,7 +13,8 @@
     = "Tags: "
     = tag_links(question.tag_list)  
   %p.meta
-    = image_tag(question.user.avatar.url)
+    = image_tag(question.user.avatar.url(:small))
     %small
       = "Posted by:"
       = link_to(question.user.login , question.user)
+    %p= question.user.total_points
