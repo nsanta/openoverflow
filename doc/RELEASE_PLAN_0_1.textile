@@ -1,0 +1,67 @@
+h1. The features that must have
+  
+  
+h2. Questions
+  * Create, show and edit
+  * vote system: up | down
+  * syntax highlight using a js lib
+
+h2. Answers
+  * Create, show and edit
+  * vote system: up | down
+  * Select an answer as the best
+  
+h2. User
+  * Create, Show and edit
+  * Avatar
+  * Basic Reward points system
+  * Basic Statistics
+  
+h2. Tags
+  * Creation and association to questions
+  * Search using tags
+
+h2. Flags
+  * Flags for questions and answers  
+  
+h2. Feedback
+  * Basic feedback system
+  
+h2. Admin
+  * Moderation on questions,answers and users
+  
+h2. Search
+  * Basic Search on questions
+  
+h2. i18n
+  * Integrate rails-i18n
+  
+  
+Nor required, but planned.
+
+
+h2. Comments
+  * Create Show and Edit
+  * flags
+  * Admin moderation
+  
+h2. Search
+  * Improves
+
+h2. oAuth 
+
+h2. User
+  * Improve Profile 
+
+h2. Trends/Statistics
+
+
+h2. Badges
+
+h2. Syntax Highlight
+  * Using GNU/source-highlight processor
+  
+
+
+
+

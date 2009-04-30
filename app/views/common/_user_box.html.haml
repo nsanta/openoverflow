@@ -1,0 +1,7 @@
+%p.meta
+  = image_tag(user.avatar.url(:small))
+  %p= user.total_points
+  %small
+    = t("app.posted_by")
+    = link_to(user.login , user)
+ 
