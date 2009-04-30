@@ -3,9 +3,7 @@ Admin 2 Hs
     % Answers(delete)
     % User(suspend,ban)
 Internacionalizacion: 4 Hs
-  - controllers (in progress)
-  - views (D)
-  - models (D)
+  - controllers (todo:admin namespace)
 Blog: 1Hs
   Mephisto engine
 Diseño: 40 Hs

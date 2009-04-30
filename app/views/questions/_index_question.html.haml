@@ -12,10 +12,5 @@
   %p.tags
     = "Tags: "
     = tag_links(question.tag_list)  
-  %p.meta
-    = image_tag(question.user.avatar.url(:small))
-    %small
-      = t("app.posted_by")
-      = link_to(question.user.login , question.user)
-    %p= question.user.total_points
+  = render :partial => 'common/user_box' , :locals => {:user => question.user}
 

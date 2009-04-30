@@ -1,6 +1,6 @@
 - model_name = model.class.to_s.underscore
 
 .vote_box
-  %p= link_to('^' ,send("vote_#{model_name}_path" , model , :vote => '1' , :format => :js) , :class => 'vote_link')
-  %p{:id => "#{model_name}_vote_avg_#{model.id}"}= model.votes_average
-  %p= link_to('v' , send("vote_#{model_name}_path" , model , :vote => '-1' , :format => :js), :class => 'vote_link')
+  %p= link_to(image_tag('arrow_up.png') ,send("vote_#{model_name}_path" , model , :vote => '1' , :format => :js) , :class => 'vote_link')
+  %p{:id => "#{model_name}_vote_avg_#{model.id}" , :class => 'total_votes'}= model.votes_average
+  %p= link_to(image_tag('arrow_down.png') , send("vote_#{model_name}_path" , model , :vote => '-1' , :format => :js), :class => 'vote_link')
