@@ -11,9 +11,10 @@ Mit license: See license doc
 
 h1. Prerequisites
 
-You need PostgreSQL, and the ruby-pg gem.
+You need 
+  * PostgreSQL gem:  sudo gem install pg
+  * Haml gem: sudo gem install haml
 
-  sudo gem install ruby-pg
 
 
 OpenOverflow works on Mac OS X and GNU Linux, with Rails 2.3.2.
