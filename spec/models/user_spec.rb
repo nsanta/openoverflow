@@ -49,6 +49,12 @@ describe User do
     it "should have many question votes" do
       User.should have_many(:answers_votes , :class_name => 'Vote' , :conditions => "votes.voteable_type= 'Answer'")
     end
+    it "should have many favorites" do
+      User.should have_many(:favorites)
+    end
+    it "should have many favorite questions" do
+      User.should have_many(:favorite_questions , :through => :favorites , :source => 'questions')
+    end
   end
   
   describe "validations" do

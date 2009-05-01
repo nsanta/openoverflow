@@ -41,6 +41,8 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :answers_votes, :class_name => 'Vote', :conditions => "votes.voteable_type= 'Answer'"
   has_many :comments
+  has_many :favorites
+  has_many :favorite_questions , :through => :favorites , :source => 'questions'
 
   # == Validations
   validates_numericality_of :total_points, :greater_than => 0

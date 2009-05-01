@@ -28,6 +28,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :search ,  :controller => 'search'
 
 
+  # Favorites
+  map.resources :favorites
+
+
   # Feedbacks system
   map.resources :feedbacks
 
