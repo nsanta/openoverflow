@@ -17,11 +17,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Vote do
   
   before(:each) do
-    @voteable = Question.create(:title => 'title' , :body => 'body' , :user => mock_model(User))
+    @voteable = Factory(:question)
     @valid_attributes = {
       :vote => 1,
       :voteable => @voteable,
-      :user => mock_model(User)
+      :user => Factory(:user)
     }
   end
 

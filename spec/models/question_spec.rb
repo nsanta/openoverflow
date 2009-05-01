@@ -22,7 +22,7 @@ describe Question do
     @valid_attributes = {
       :title => "What is the best Framework?",
       :body => "body for description",
-      :user => mock_model(User),
+      :user => Factory(:user),
       :votes_average => 0
     }
   end

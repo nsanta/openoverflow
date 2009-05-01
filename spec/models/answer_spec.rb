@@ -19,8 +19,8 @@ describe Answer do
   before(:each) do
     @valid_attributes = {
       :body => "value for body",
-      :user => mock_model(User),
-      :question => mock_model(Question)
+      :user => Factory(:user),
+      :question => Factory(:question)
     }
   end
 
@@ -76,7 +76,7 @@ describe Answer do
         @new_selected_answer.reload.selected.should == true
       end
       it "should the question flagged as answered" do
-        @new_selected_answer.quetion.answered.should == true
+        @new_selected_answer.question.answered.should == true
       end
     end
   end

@@ -203,6 +203,8 @@
     profile: Perfil
     new_question: Nueva Pregunta
     search: Buscar
+    edit: Editar
+    tips: Tips
   flash:
     notice:
       application:
@@ -220,8 +222,8 @@
           valid: La pregunta ha sido actualizada
           invalid: La pregunta NO ha sido actualizada
         vote:
-          valid: Tu voto NO a sido guardado
-          invalid: Tu voto a sido guardado
+          valid: Tu voto a sido guardado
+          invalid: Tu voto NO a sido guardado
           update: Tu voto ha sido actualizado
           nochange: Ya has votado esta pregunta
       answer:
