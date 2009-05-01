@@ -11,9 +11,9 @@ Mit license: See license doc
 
 h1. Prerequisites
 
-You need 
-  * PostgreSQL gem:  sudo gem install pg
-  * Haml gem: sudo gem install haml
+
+* PostgreSQL gem:  sudo gem install pg
+* Haml gem: sudo gem install haml
 
 
 
@@ -32,9 +32,9 @@ Note: internationalization is not yet finished.
 
 h2. Contributors
 
- *Nicolas Santa
- *Ariel Diaz Bemejo
- *Matthias Berth 
+* Nicolas Santa
+* Ariel Diaz Bemejo
+* Matthias Berth 
 
 h2. Site name etc.
 
