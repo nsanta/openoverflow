@@ -6,4 +6,10 @@
 %br
 = form.text_field :email
 %br
-
+= f.label :password, f.object.new_record? ? nil : "Change password" 
+%br 
+= f.password_field :password
+%br
+= f.label :password_confirmation
+%br
+= f.password_field :password_confirmation

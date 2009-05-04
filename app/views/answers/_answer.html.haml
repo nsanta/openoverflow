@@ -1,5 +1,5 @@
 .answer
-  %p= answer.body
+  %p= safe_textilize(answer.body)
   = render :partial => 'common/user_box' , :locals => {:user => answer.user}
   %p= link_to(t('action.flag'), new_answer_flag_path(@question) , :rel => 'facebox')
   = render :partial => 'common/vote_box' , :locals => {:model => answer}
