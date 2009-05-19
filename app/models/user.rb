@@ -47,4 +47,10 @@ class User < ActiveRecord::Base
   # == Validations
   validates_numericality_of :total_points, :greater_than => 0
 
+  def deliver_password_reset_instructions!  
+    reset_perishable_token!  
+    Notifier.deliver_password_reset_instructions(self)  
+  end  
+
+
 end

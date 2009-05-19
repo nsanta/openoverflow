@@ -4,9 +4,14 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => "user_sessions", :action => "destroy"
   map.register '/register', :controller => "users", :action => "new"
 
+  # Users
+
   map.resources :users
   map.resource :user_session
   map.resource :account, :controller => "users"
+  
+  map.resources :password_resets
+  
 
   # Questions
   map.resources :questions, :member => {:vote => :post, :tag => :get},
@@ -26,8 +31,8 @@ ActionController::Routing::Routes.draw do |map|
   #end
 
   map.resources :search ,  :controller => 'search'
-
-
+  
+  
   # Favorites
   map.resources :favorites
 
@@ -43,6 +48,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :answers, :member => {:ban => :post}
     admin.resources :users, :member => {:ban => :post}
   end
+
+  
 
   map.root :controller => "home", :action => "index"
   # The priority is based upon order of creation: first created -> highest priority.
