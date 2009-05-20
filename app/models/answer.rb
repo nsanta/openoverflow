@@ -14,20 +14,22 @@
 #
 
 class Answer < ActiveRecord::Base
-  
-  
-  belongs_to :user , :counter_cache => :total_answers
-  belongs_to :question  , :counter_cache => true
-  has_many :votes , :as => :voteable
+
+  # == Relations
+  belongs_to :user, :counter_cache => :total_answers
+  belongs_to :question, :counter_cache => true
+  has_many :votes, :as => :voteable
   has_many :comments
-  
-  validates_presence_of :user , :question , :body
-  
+
+  # == Validations
+  validates_presence_of :user, :question, :body
+
+  # == Callbacks
   after_create {|record| record.add_points(50)}
-  
-  
-  # == InstanceMethods
-  
+
+
+  # == Instance Methods
+
   def select!
     if prev_selected = Answer.first(:conditions => {:question_id => self.question_id , :selected => true})
       prev_selected.toggle!(:selected)
@@ -37,12 +39,12 @@ class Answer < ActiveRecord::Base
     self.add_points(100)
     prev_selected
   end
-  
-  
+
+
   def add_points(points = 1)
     self.user.total_points ||= 0
     self.user.total_points += points
     self.user.save
   end
-  
+
 end

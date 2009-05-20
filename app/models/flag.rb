@@ -14,20 +14,34 @@
 
 class Flag < ActiveRecord::Base
 
+  # == Relations
   belongs_to :user
-  belongs_to :flaggeable , :polymorphic => true
-  
-  validates_presence_of :user , :flaggeable , :body  
-  
+  belongs_to :flaggeable, :polymorphic => true
+
+  # == Validations
+  validates_presence_of :user, :flaggeable, :body
+
+  # == Callbacks
   after_create {|record| record.add_points(5)}
-  
-  named_scope :questions , :conditions => "flaggeable_type = 'Question'" , :order => 'created_at DESC'
-  named_scope :answers , :conditions => "flaggeable_type = 'Answer'", :order => 'created_at DESC'
- 
+
+  # == Named Scopes  
+  named_scope :questions, :conditions => "flaggeable_type = 'Question'", :order => 'created_at DESC'
+  named_scope :answers,   :conditions => "flaggeable_type = 'Answer'",   :order => 'created_at DESC'
+
+
+
+  # == Instance Methods
+
   def add_points(points = 1)
     self.user.total_points ||= 0
     self.user.total_points += points
     self.user.save
   end
-  
+
+
+  def flaggeable_body
+    self.flaggeable.body
+  end
+
+
 end

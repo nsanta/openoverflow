@@ -1,0 +1,15 @@
+%h2 Flagged Answers
+
+%ul#flagged_answers
+  - @flags.each do |flag|
+    %li.flag
+      %p.question
+        Answer's Question
+        = link_to(flag.flaggeable.question.title, admin_answer_path(flag.flaggeable), :rel => 'facebox')
+      %p
+        Flag Comment:
+        = flag.body
+      %p.user= "By: #{link_to(flag.user.login, admin_user_path(flag.user))}"
+      %p.flaggable_links
+        = link_to(flag.flaggeable.banned ? "Unban" : "Ban", ban_admin_answer_path(flag), :method=>:put, :class => 'ban_link')
+        = link_to("Borrar Reportacion", admin_answer_path(flag), :method=>:delete, :confirm => 'Are you sure to remove this Flag?', :class => 'delete_flag')

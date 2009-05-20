@@ -1,0 +1,8 @@
+.question
+  .content
+    %h2.title= h(@question.title)
+    %p.body= safe_textilize(@question.body)
+#answers
+  %h2 Answers
+  = render :partial => 'answers/answer', :collection => @question.answers
+  

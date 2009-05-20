@@ -1,0 +1,10 @@
+.answer
+  .content
+    %h3.title
+      Question:
+      = h(@answer.question.title)
+    %p.body= safe_textilize(@answer.question.body)
+#answer
+  %h2 Flagged Answer
+  %p= safe_textilize(@answer.body)
+  
