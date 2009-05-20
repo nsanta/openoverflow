@@ -1,7 +1,11 @@
-%p.meta
-  = image_tag(user.avatar.url(:small))
-  %p= user.total_points
-  %small
-    = t("app.posted_by")
-    = link_to(user.login , user)
+%div{:class => 'user_box grid_4'}
+  %div{:class => 'user_image grid_2'}
+    = image_tag(user.avatar.url(:small))
+  %div{:class => 'user_data grid_2'}
+    %p
+      = "P: "
+      = user.total_points
+    %p
+      = t("app.posted_by")
+      = link_to(user.login , user)
  

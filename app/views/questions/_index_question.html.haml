@@ -1,16 +1,17 @@
 .home_question
-  %p.data
-    =t 'model.visits'
-    %b= question.total_views
-  %p.data
-    =t 'model.answers'
-    %b= question.answers_count
-  %p.data
-    =t 'model.votes'
-    %b= question.votes_average
-  %h2.title= link_to(question.title , question)
-  %p.tags
-    = "Tags: "
-    = tag_links(question.tag_list)  
-  = render :partial => 'common/user_box' , :locals => {:user => question.user}
-
+  #div{:class => "question grid_9 alpha"}
+    %h2.title= link_to(question.title , question)
+    %p.tags
+      = "Tags: "
+      = tag_links(question.tag_list)  
+    = render :partial => 'common/user_box' , :locals => {:user => question.user}
+  #div{:class => "metadata grid_2 omega"}
+    %p
+      %span= t 'model.visits'
+      %span= question.total_views
+    %p
+      %span= t 'model.answers'
+      %span= question.answers_count
+    %p
+      %span= t 'model.votes'
+      %span= question.votes_average

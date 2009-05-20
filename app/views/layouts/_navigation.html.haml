@@ -1,0 +1,8 @@
+.container_16
+  #menu{:class => "grid_10 alpha"} 
+    %ul
+      %li= link_to(t('app.new_question'), new_question_path)
+      %li= link_to(t('model.questions') ,'#')
+      %li= link_to(t('app.tags') ,'#')
+  #search{:class => "grid_6 omega"} 
+    = render :partial => '/layouts/search'
