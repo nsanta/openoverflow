@@ -44,9 +44,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace :admin do |admin|
     admin.resource :dashboard, :controller => :dashboard
-    admin.resources :questions, :member => {:ban => :post}
-    admin.resources :answers, :member => {:ban => :post}
-    admin.resources :users, :member => {:ban => :post}
+    admin.resources :questions, :member => {:ban => :put}
+    admin.resources :answers, :member => {:ban => :put}
+    admin.resources :users, :member => {:ban => :put}
   end
 
   

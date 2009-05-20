@@ -1,9 +1,9 @@
 .answer
   %p= safe_textilize(answer.body)
-  = render :partial => 'common/user_box' , :locals => {:user => answer.user}
-  %p= link_to(t('action.flag'), new_answer_flag_path(@question) , :rel => 'facebox')
-  = render :partial => 'common/vote_box' , :locals => {:model => answer}
-  = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')) , select_answer_path(answer) , :id => "answer_link_#{answer.id}" , :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
+  = render :partial => 'common/user_box', :locals => {:user => answer.user}
+  %p= link_to(t('action.flag'), new_answer_flag_path(answer), :rel => 'facebox')
+  = render :partial => 'common/vote_box', :locals => {:model => answer}
+  = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')), select_answer_path(answer), :id => "answer_link_#{answer.id}", :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
   - if answer.user == current_user
     %p.owner_links
-      = link_to(t('app.edit') , edit_answer_path(answer))
+      = link_to(t('app.edit'), edit_answer_path(answer))
