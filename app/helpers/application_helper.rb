@@ -10,8 +10,8 @@ module ApplicationHelper
     current_user && current_user.admin
   end
 
-  def tag_link(tag)
-    link_to(tag , tag_question_path(tag))
+  def tag_link(tag , klass = nil)
+    link_to(tag , tag_question_path(tag) , :class => klass)
   end
 
   def tag_links(tags)

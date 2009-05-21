@@ -1,10 +1,10 @@
 %h1 Nueva Pregunta
 
-= error_messages_for :question
+.error_messages
+  = error_messages_for :question
 
-- form_for @question do |f|
-
-  = render :partial => 'form', :locals => {:f => f}
-  
-  = submit_tag t("question.create_button")
+.form
+  - form_for @question do |f|
+    = render :partial => 'form', :locals => {:f => f}
+    = submit_tag t("question.create_button") , :class => 'submit_button'
 

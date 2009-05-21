@@ -1,0 +1,17 @@
+.form {
+  float: left; }
+  .form .field {
+    display: block;
+    margin: 10px; }
+    .form .field label {
+      font-size: 24px; }
+    .form .field input {
+      border: 1px solid #12343D;
+      width: 100%;
+      font-size: 24px; }
+  .form .submit_button {
+    background: #13a5b8;
+    color: white;
+    padding: 6px 9px 6px 9px;
+    border: 0px;
+    float: right; }

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
  
 
   def index
-    @questions = Question.all
+    @questions = Question.paginate(:page => params[:page]|| 1 , :per_page => 20 , :order => 'created_at DESC')
   end
 
 end

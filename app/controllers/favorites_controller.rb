@@ -8,6 +8,8 @@ class FavoritesController < ApplicationController
     end
   end
   
+  
+  
   def destroy
     @favorite = current_user.favorites.find_by_question_id(params[:id])
     @favorite.destroy

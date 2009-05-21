@@ -28,7 +28,7 @@ class Question < ActiveRecord::Base
 
   # == Validations
   validates_presence_of :title, :body, :user
-  validates_length_of :title, :within => 3..40
+  validates_length_of :title, :within => 3..80
 
   # == Named Scopes
   named_scope :unbanned, :conditions => 'banned = FALSE'
@@ -38,14 +38,19 @@ class Question < ActiveRecord::Base
   after_create {|record| record.add_points(20)}
   # before_save {|record| record.parse_source_code_in_body}
  
-
-  # == Instance Methods
-
-  def unanswered (page = 1)
-    self.paginate(:conditions => "answers_count > 0", :order => 'created_at DESC', :page => page, :per_page => 20)
+  # == Class Methods
+  def self.unanswered (page = 1)
+    self.paginate(:conditions => "answers_count = 0", :order => 'created_at DESC', :page => page, :per_page => 20)
   end
   
+  def self.hot (page = 1)
+    self.paginate(:conditions => "answers_count > 0", 
+                  :order => 'DATE(created_at) , total_views DESC', 
+                  :page => page, :per_page => 20)
+  end
 
+  # == Instance Methods
+  
   def add_points(points = 1)
     self.user.total_points ||= 0
     self.user.total_points += points

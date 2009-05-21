@@ -1,15 +1,13 @@
-= f.label t("question.title")
+.field
+  = f.label t("question.title")
+  = f.text_field :title
   
-= f.text_field :title
-%br
-= f.label t("question.body")
-  
-= f.text_area :body
-%br
-= f.label t("question.tags")
-  
-= f.text_field :tag_list
-%br
+.field
+  = f.text_area :body , :cols => 78 , :rows => 24
+
+.field
+  = f.label t("question.tags")
+  = f.text_field :tag_list
 
 - content_for :javascripts do
   = javascript_include_tag('wmd/wmd')

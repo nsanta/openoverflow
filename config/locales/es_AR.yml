@@ -206,6 +206,8 @@
     edit: Editar
     tips: Tips
     tags: Tags
+    unanswered: Sin Responder
+    hot: Hot
   flash:
     notice:
       application:

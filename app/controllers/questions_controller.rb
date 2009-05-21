@@ -76,6 +76,10 @@ class QuestionsController < ApplicationController
     render 'index'
   end
 
+  def hot
+    @questions = Question.hot(params[:page])
+    render 'index'
+  end
 
   private
   

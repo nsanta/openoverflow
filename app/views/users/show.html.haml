@@ -2,6 +2,9 @@
 
 %p= "Nombre de Usuario: #{@user.login}"
 
+- if @user == current_user
+  %p= link_to("Editar" , edit_user_path(@user))
+
 #activity
   %p= "Puntos: #{@user.total_points}"
   %p= "Preguntas: #{@user.total_questions}"
