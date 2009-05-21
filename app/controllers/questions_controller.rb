@@ -26,6 +26,7 @@ class QuestionsController < ApplicationController
   
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers.all(:order => 'selected, votes_average DESC')
   end
 
   def edit

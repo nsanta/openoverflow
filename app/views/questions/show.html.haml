@@ -17,7 +17,7 @@
   = link_to(t('action.answer'), '#' , :class => 'answer_new_form_link')
   %div{:id => 'answer_new_form_box'}
     = render :partial => 'answers/new' , :locals => {:question => @question}
-  = render :partial => 'answers/answer' , :collection => @question.answers
+  = render :partial => 'answers/answer' , :collection => @answers
   
 - content_for :javascripts do
   = javascript_include_tag('wmd/wmd')

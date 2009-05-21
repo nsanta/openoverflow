@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  before_filter :load_question , :except => [:vote , :select , :flag]
+  before_filter :load_question , :except => [:vote , :select , :flag ,:edit , :update]
   skip_before_filter :verify_authenticity_token
 
 
@@ -21,14 +21,16 @@ class AnswersController < ApplicationController
 
   def update
     @answer = current_user.answers.find(params[:id])
-    if @answer.save
-      flash[:notice] = t('flash.notice.answer.update.valid')
-    else
-      flash[:notice] = t('flash.notice.answer.update.invalid')
-    end
     respond_to do |format|
-      format.js {}
-    end
+      if @answer.update_attributes(:body => params[:answer][:body])
+        flash[:notice] = t('flash.notice.answer.update.valid')
+        format.html{redirect_to question_path(@answer.question)}
+      else
+        flash[:notice] = t('flash.notice.answer.update.invalid')
+        format.html{render 'edit'}
+      end
+    end 
+    
   end
   
   def vote

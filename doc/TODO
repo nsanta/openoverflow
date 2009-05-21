@@ -1,7 +1,3 @@
-Admin 2 Hs
-  - Moderation on
-    % Answers(delete)
-    % User(suspend,ban)
 Internacionalizacion: 4 Hs
   - controllers (todo:admin namespace)
 Blog: 1Hs
@@ -13,5 +9,7 @@ Documentation 10hs
   - Video?
   - Terms of Service
   - About us?
-
-  
+HopToad Inclusion
+Rack::Bug inclusion
+Badges 20 Hs
+ - by goals
