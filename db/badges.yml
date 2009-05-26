@@ -1,0 +1,95 @@
+1:
+  Civic: 
+    desc: "first vote up"
+    img: "civic.png"
+    model: user
+    command: "total_votes_up >= 1"
+  Critic: 
+    desc: "first vote down"
+    img: "critic.png"
+    model: user 
+    command: "total_votes_down >= 1"
+  Curious: 
+    desc: "first post"
+    img: "curious.png" 
+    model: user
+    command: "total_questions >= 1"
+  nonamefornow: 
+    desc:  first flags
+    img: "censor.png" 
+    model: user
+    command: "flags.size >= 1"
+2:
+  Hero: 
+    desc: 50 vote up
+    img: "hero.png" 
+    model: user
+    command: "total_votes_up >= 50"
+  Minion: 
+    desc: 66 vote down
+    img: "minion.png" 
+    model: user
+    command: "total_votes_down >= 66"
+  Balancer: 
+    desc: 25 vote down and 25 vote up
+    img: "balancer.png" 
+    model: user
+    command: "total_votes_up >= 25 && total_votes_down >= 2"
+  Censorship: 
+    desc:  25 flags
+    img: "censor.png" 
+    model: user
+    command: "flags.size >= 25"
+  Prince: 
+    desc: 100 favorites for one question
+    img: "prince.png" 
+    model: question
+    command: "favorites.size >= 100"
+  Follower: 
+    desc: 50 own favorites
+    img: "follower.png"
+    model: user
+    command: "favorites.size >= 50" 
+  Conselour: 
+    desc: 100 answers
+    img: "conselour.png"
+    model: user
+    command: "total_answers >= 50" 
+  Philosopher: 
+    desc: 100 questions
+    img: "philosopher.png" 
+    model: user
+    command: "total_questions >= 50" 
+ 
+3:
+  Angel: 
+    desc: 777 vote up
+    img: "angel.png"
+    model: user
+    command: "total_votes_up >= 777" 
+  Demon: 
+    desc: 666 vote down
+    img: "demon.png" 
+    model: user
+    command: "total_votes_down >= 666"
+  Famous: 
+    desc: Question with more than 10000 views
+    img: "famous.png" 
+    model: question
+    command: "total_views >= 50"
+  Verduge: 
+    desc: 150 flags
+    img: "verduge.png" 
+    model: user
+    command: "flags.size >= 150"
+  King: 
+    desc: 1000 favorites for one question
+    img: "king.png" 
+    model: question
+    command: "favorites.size >= 1000"
+  Oracle: 
+    desc: 100 right answers
+    img: "oracle.png" 
+    model: user
+    command: "answers.selected.size >= 100"
+  

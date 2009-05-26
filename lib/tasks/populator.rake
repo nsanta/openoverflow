@@ -18,5 +18,20 @@ namespace :db do
                         :user => @user)
       end
     end
+    task :badges => :environment do
+      Badge.delete_all
+      badges_file = YAML.load(File.open(File.join(RAILS_ROOT , 'db' , 'badges.yml')).read)
+      badges_file.each do |level,badges|
+        badges.each do |badge , content|
+          Badge.create!(:title => badge , 
+                        :description => content["desc"] , 
+                        :image_url => content["img"] ,
+                        :level => level,
+                        :model => content["model"],
+                        :command => content["command"])
+        end
+      end
+    end
+    
   end
 end

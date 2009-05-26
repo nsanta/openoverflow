@@ -4,6 +4,7 @@
     .body= @question.body
     %p.tags= tag_links(@question.tag_list)
   = render :partial => 'common/vote_box' , :locals => {:model => @question}
+  = favorite_link(@question)
   = render :partial => 'common/user_box' , :locals => {:user => @question.user}
   .clear
   %div{:class => 'grid_3 prefix'}
@@ -25,6 +26,7 @@
   = javascript_include_tag('answer/new')
   = javascript_include_tag('answer/create')
   = javascript_include_tag('answer/select')
+  = javascript_include_tag('favorite/call')
   = javascript_include_tag('syntax_highlighter/shCore')
   - %w(shBrushBash.js	shBrushCSharp.js 	shBrushCpp.js shBrushCss.js	shBrushDelphi.js 	shBrushDiff.js shBrushGroovy.js	shBrushJScript.js shBrushJava.js	shBrushPerl.js shBrushPhp.js shBrushPlain.js shBrushPython.js shBrushRuby.js shBrushScala.js shBrushSql.js shBrushVb.js	shBrushXml.js).each do |sh|
     = javascript_include_tag("syntax_highlighter/#{sh}")

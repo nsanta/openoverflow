@@ -25,7 +25,8 @@ class Question < ActiveRecord::Base
   belongs_to :user, :counter_cache => :total_questions
   has_many :votes, :as => :voteable
   has_many :answers
-
+  has_many :favorites
+  
   # == Validations
   validates_presence_of :title, :body, :user
   validates_length_of :title, :within => 3..80

@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
                             :collection => {:unanswered => :get , :hot => :get} do |question|
     question.resources :answers
     question.resources :flags
+    question.resource :favorites
   end
 
   # Answers
@@ -33,8 +34,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :search ,  :controller => 'search'
   
   
-  # Favorites
-  map.resources :favorites
+  
 
 
   # Feedbacks system
@@ -52,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   
 
   map.root :controller => "home", :action => "index"
+  map.badges "/badges" , :controller => "home", :action => "badges"
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

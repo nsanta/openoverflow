@@ -27,6 +27,9 @@ class Answer < ActiveRecord::Base
   # == Callbacks
   after_create {|record| record.add_points(50)}
 
+   
+  named_scope :selected , :conditions => "selected = TRUE"
+
 
   # == Instance Methods
 

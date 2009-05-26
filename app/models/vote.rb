@@ -15,7 +15,7 @@
 class Vote < ActiveRecord::Base
   VOTE_RANGE = [-1 , 1]
 
-  belongs_to :user , :counter_cache => :total_votes
+  belongs_to :user
   
   belongs_to :voteable , :polymorphic => true
   
@@ -25,19 +25,48 @@ class Vote < ActiveRecord::Base
   validates_uniqueness_of :user_id  , :scope => [:voteable_id , :voteable_type]
   
   # == Callbacks
-  after_create {|record| record.vote_averages_of_voteables_on_create;}# record.add_points(10)}
-  after_update {|record| record.vote_averages_of_voteables_on_update;}# record.add_points(-10)}
+  after_create do |record| 
+    record.vote_averages_of_voteables_on_create
+    record.update_user_counter_caches_on_create
+    record.add_points(10)
+  end  
+  after_update do |record| 
+    record.vote_averages_of_voteables_on_update
+    record.update_user_counter_caches_on_update
+    record.add_points(-10)
+  end  
   
   
-  
+  #== Instance Methods
   def vote_averages_of_voteables_on_create
     self.voteable.votes_average += self.vote
     self.voteable.save
   end
-  
+
   def vote_averages_of_voteables_on_update
     self.voteable.votes_average += self.vote * 2
     self.voteable.save
+  end
+ 
+  def update_user_counter_caches_on_create
+    if vote == 1
+      self.user.total_votes_up += 1
+    elsif vote == -1
+      self.user.total_votes_down += 1
+    end
+    self.user.total_votes += 1
+    self.user.save
+  end
+  
+  def update_user_counter_caches_on_create
+    if vote == 1
+      self.user.total_votes_up += 1
+      self.user.total_votes_down -= 1
+    elsif vote == -1
+      self.user.total_votes_down += 1
+      self.user.total_votes_up -= 1
+    end
+    self.user.save
   end
   
   def add_points(points = 1)

@@ -42,15 +42,27 @@ class User < ActiveRecord::Base
   has_many :answers_votes, :class_name => 'Vote', :conditions => "votes.voteable_type= 'Answer'"
   has_many :comments
   has_many :favorites
-  has_many :favorite_questions , :through => :favorites , :source => 'questions'
-
+  has_many :favorite_questions , :through => :favorites , :source => 'question'
+  has_many :user_badges
+  has_many :badges , :through => :user_badges , :uniq => true
+  has_many :flags
   # == Validations
   validates_numericality_of :total_points, :greater_than => 0
+ 
+  #== Callbacks
+  before_create :set_defaults
+
 
   def deliver_password_reset_instructions!  
     reset_perishable_token!  
     Notifier.deliver_password_reset_instructions(self)  
   end  
 
+  protected
+  
+  def set_defaults
+    self.total_votes_down = self.total_votes_up = self.total_points = 0
+    
+  end
 
 end
