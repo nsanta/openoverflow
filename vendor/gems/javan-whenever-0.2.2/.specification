@@ -1,0 +1,118 @@
+--- !ruby/object:Gem::Specification 
+name: javan-whenever
+version: !ruby/object:Gem::Version 
+  version: 0.2.2
+platform: ruby
+authors: 
+- Javan Makhmali
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-04-30 00:00:00 -03:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: chronic
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 0.2.3
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.3.0
+    version: 
+description: Provides clean ruby syntax for defining messy cron jobs and running them Whenever.
+email: javan@javan.us
+executables: 
+- whenever
+- wheneverize
+extensions: []
+
+extra_rdoc_files: 
+- bin/whenever
+- bin/wheneverize
+- CHANGELOG.rdoc
+- lib/base.rb
+- lib/command_line.rb
+- lib/job_list.rb
+- lib/job_types/default.rb
+- lib/job_types/rake_task.rb
+- lib/job_types/runner.rb
+- lib/outputs/cron.rb
+- lib/version.rb
+- lib/whenever.rb
+- README.rdoc
+files: 
+- bin/whenever
+- bin/wheneverize
+- CHANGELOG.rdoc
+- lib/base.rb
+- lib/command_line.rb
+- lib/job_list.rb
+- lib/job_types/default.rb
+- lib/job_types/rake_task.rb
+- lib/job_types/runner.rb
+- lib/outputs/cron.rb
+- lib/version.rb
+- lib/whenever.rb
+- Rakefile
+- README.rdoc
+- test/command_line_test.rb
+- test/cron_test.rb
+- test/output_command_test.rb
+- test/output_env_test.rb
+- test/output_rake_test.rb
+- test/output_runner_test.rb
+- test/test_helper.rb
+- whenever.gemspec
+- Manifest
+has_rdoc: true
+homepage: http://github.com/javan/whenever
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- Whenever
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "1.2"
+  version: 
+requirements: []
+
+rubyforge_project: whenever
+rubygems_version: 1.3.1
+signing_key: 
+specification_version: 2
+summary: Provides clean ruby syntax for defining messy cron jobs and running them Whenever.
+test_files: 
+- test/command_line_test.rb
+- test/cron_test.rb
+- test/output_command_test.rb
+- test/output_env_test.rb
+- test/output_rake_test.rb
+- test/output_runner_test.rb
+- test/test_helper.rb

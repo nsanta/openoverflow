@@ -1,0 +1,40 @@
+== 0.2.2 / April 30th, 2009
+
+* Days of week jobs can now accept an :at directive (ex: every :monday, :at => '5pm'). [David Eisinger]
+
+* Fixed command line test so it runs without a config/schedule.rb present. [Javan Makhmali]
+
+* Raising an exception if someone tries to specify an :at with a cron shortcut (:day, :reboot, etc) so there are no false hopes. [Javan Makhmali]
+
+
+== 0.1.7 / March 5th, 2009
+
+* Added ability to update the crontab file non-destuctively instead of only overwriting it. [Javan Makhmali -- Inspired by code submitted individually from: Tien Dung (tiendung), Tom Lea (cwninja), Kyle Maxwell (fizx), and Andrew Timberlake (andrewtimberlake) on github]
+
+
+== 0.1.5 / February 19th, 2009
+
+* Fixed load path so Whenever's files don't conflict with anything in Rails. Thanks Ryan Koopmans. [Javan Makhmali]
+
+
+== 0.1.4 / February 17th, 2009
+
+* Added --load-file and --user opts to whenever binary. [Javan Makhmali]
+
+
+== 0.1.3 / February 16th, 2009
+
+* Added 'rake' helper for defining scheduled rake tasks. [Javan Makhmali]
+
+* Renamed :cron_environment and :cron_path to :enviroment and :path for better (word) compatibility with rake tasks. [Javan Makhmali]
+
+* Improved test load paths so tests can be run individually. [Javan Makhmali]
+
+* Got rid of already initialized constant warning. [Javan Makhmali]
+
+* Requiring specific gem versions: Chronic >=0.2.3 and activesupport >= 1.3.0 [Javan Makhmali]
+
+
+== 0.1.0 / February 15th, 2009
+
+* Initial release [Javan Makhmali]
