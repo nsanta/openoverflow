@@ -23,8 +23,6 @@ Rails::Initializer.run do |config|
              :lib    => "factory_girl",
              :source => "http://gems.github.com"
   config.gem 'haml'
-  config.gem 'pg'
-  config.gem 'RedCloth'
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).

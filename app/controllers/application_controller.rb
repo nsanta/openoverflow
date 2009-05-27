@@ -15,6 +15,15 @@ class ApplicationController < ActionController::Base
   before_filter :load_default_flash_messages 
   after_filter :store_location
 
+  before_filter :authenticate
+
+  def authenticate
+    return true unless Rails.env.production?
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "openoverflow" && password == "0p3n0v3rfl0w"
+    end
+  end
+
 
   def current_user
     return @current_user if defined?(@current_user)

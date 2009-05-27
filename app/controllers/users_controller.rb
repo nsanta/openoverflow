@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 
   skip_before_filter :require_user, :only => [:new, :create]
   before_filter :require_no_user, :only => [:new, :create]
-
+  skip_after_filter :store_location , :except => [:show , :edit]
+  
   def new
     @user = User.new
   end

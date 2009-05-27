@@ -1,15 +1,16 @@
 .question
-  .data
+  %div{:class => 'vote_box grid_1 alpha'}
+    = render :partial => 'common/vote_box' , :locals => {:model => @question}
+  %div{:clas => 'grid_9 omega data '}
     %h2.title= h @question.title
     .body= @question.body
-    %p.tags= tag_links(@question.tag_list)
-  = render :partial => 'common/vote_box' , :locals => {:model => @question}
-  = favorite_link(@question)
-  = render :partial => 'common/user_box' , :locals => {:user => @question.user}
+    = render :partial => 'common/user_box' , :locals => {:user => @question.user}
+  %p.tags= tag_links(@question.tag_list)
   .clear
-  %div{:class => 'grid_3 prefix'}
+  %div{:class => 'grid_11'}
     %p{:id => "flag_for_question_#{@question.id}"}
       = link_to(t('action.flag') , new_question_flag_path(@question) , :rel => 'facebox')
+    %p.favorite_link= favorite_link(@question)  
     - if @question.user == current_user
       %p.owner_links
         = link_to(t('app.edit') , edit_question_path(@question))
