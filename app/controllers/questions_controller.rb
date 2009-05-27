@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  skip_before_filter :require_user , :only => [:show, :index , :tag , :unanswered]
+  skip_before_filter :require_user , :only => [:new , :edit , :create , :update , :vote]
   after_filter :increment_total_views , :only => [:show]
 
 
