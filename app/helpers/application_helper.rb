@@ -19,7 +19,6 @@ module ApplicationHelper
   end
 
   def favorite_link (question)
-    return '' unless current_user
     if current_user.favorite_questions.include?(question)
       text = 'favorite' 
       rel = 'delete'

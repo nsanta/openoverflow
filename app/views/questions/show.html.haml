@@ -1,25 +1,27 @@
 .question
-  %div{:class => 'vote_box grid_1 alpha'}
-    = render :partial => 'common/vote_box' , :locals => {:model => @question}
-  %div{:clas => 'grid_9 omega data '}
-    %h2.title= h @question.title
-    .body= @question.body
-    = render :partial => 'common/user_box' , :locals => {:user => @question.user}
-  %p.tags= tag_links(@question.tag_list)
-  .clear
-  %div{:class => 'grid_11'}
-    %p{:id => "flag_for_question_#{@question.id}"}
-      = link_to(t('action.flag') , new_question_flag_path(@question) , :rel => 'facebox')
-    %p.favorite_link= favorite_link(@question)  
-    - if @question.user == current_user
-      %p.owner_links
+  %div{:class => 'data grid_11'}
+    %div{:class => 'grid_10'}
+      %h2.title= h @question.title
+      .body= @question.body
+    %div{:class => 'tags grid_10'}= tag_links(@question.tag_list)    
+    %div{:class => 'grid_4'}
+      %div{:class => 'vote_box grid_1 alpha'}
+        = render :partial => 'common/vote_box' , :locals => {:model => @question}
+      %div.grid_3  
+      - if logged_in?  
+        = link_to(t('action.answer'), '#' , :class => 'answer_new_form_link')
+        = favorite_link(@question)  
+        %span{:id => "flag_for_question_#{@question.id}"}
+          = link_to(t('action.flag') , new_question_flag_path(@question) , :rel => 'facebox')
+      - if @question.user == current_user
         = link_to(t('app.edit') , edit_question_path(@question))
-  .clear      
-#answers
-  = link_to(t('action.answer'), '#' , :class => 'answer_new_form_link')
-  %div{:id => 'answer_new_form_box'}
-    = render :partial => 'answers/new' , :locals => {:question => @question}
-  = render :partial => 'answers/answer' , :collection => @answers
+    = render :partial => 'common/user_box' , :locals => {:user => @question.user}    
+.clear      
+%div{:class => 'grid_11' , :id => 'answers'}
+  - if logged_in?
+    %div{:id => 'answer_new_form_box'}
+      = render :partial => 'answers/new' , :locals => {:question => @question}
+= render :partial => 'answers/answer' , :collection => @answers
   
 - content_for :javascripts do
   = javascript_include_tag('wmd/wmd')

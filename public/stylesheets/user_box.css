@@ -1,4 +1,5 @@
 .user_box {
+  float: right;
   font-size: 12px; }
   .user_box .user_image {
     float: left;
@@ -7,4 +8,4 @@
     .user_box .user_image img {
       border: 6px solid white; }
   .user_box .user_date {
-    floar: right; }
+    float: right; }

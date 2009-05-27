@@ -19,7 +19,9 @@
       :background #13a5b8
     .stat_votes
       :background #12343d
+      
 .tags
+  :margin 12px 0 12px 0
   a
     :background #13a5b8
     :color white
@@ -29,14 +31,24 @@
     &:hover
       :text-decoration underline
   
-.question
+.question , .answer 
   .data
+    :background #d1ba84
     .title
       :font-size 24px
       :color #e57c08
+      :padding 12px
       a
         :text-decoration none
     .body
-      :background #d1ba84
-      :padding 20px
-      :margin 10px 0 10px 0
+      :margin 12px 0 12px 0
+      :padding 12px
+    .tags
+      :padding 12px
+
+.answer
+  :margin 24px 0 0 0
+  .data
+    :background #efefef
+  .right_data
+    :background #9BD59B

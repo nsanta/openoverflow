@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   has_many :badges , :through => :user_badges , :uniq => true
   has_many :flags
   # == Validations
-  validates_numericality_of :total_points, :greater_than => 0
+  validates_numericality_of :total_points, :greater_or_equal_than => 0
  
   #== Callbacks
   before_create :set_defaults
