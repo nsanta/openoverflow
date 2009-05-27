@@ -1,7 +1,7 @@
 .form
   - form_for @answer , answer_path(@answer) , :id => 'answer_new_form' , :method => 'put' do |f|
     .field
-      = f.text_area :body
+      = f.text_area :body, :cols => 82 , :rows => 16
     = submit_tag "Responder!" , :class => 'submit_button'
     
 - content_for :javascripts do

@@ -1,9 +1,16 @@
 .answer
-  %p= answer.body
-  = render :partial => 'common/user_box', :locals => {:user => answer.user}
-  %p= link_to(t('action.flag'), new_answer_flag_path(answer), :rel => 'facebox')
-  = render :partial => 'common/vote_box', :locals => {:model => answer}
-  = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')), select_answer_path(answer), :id => "answer_link_#{answer.id}", :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
-  - if answer.user == current_user
-    %p.owner_links
-      = link_to(t('app.edit'), edit_answer_path(answer))
+  %div{:class => "#{answer.selected ? "right_data" : "data"} grid_11"}
+    %div{:class => 'grid_10'}
+      .body= answer.body
+    .clear
+    %div{:class => 'grid_4'}
+      %div{:class => 'vote_box grid_1 alpha'}
+        = render :partial => 'common/vote_box' , :locals => {:model => answer}
+      %div{:class => 'grid_3'}
+        = link_to(t('action.flag'), new_answer_flag_path(answer), :rel => 'facebox')
+        = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')), select_answer_path(answer), :id => "answer_link_#{answer.id}", :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
+        - if answer.user == current_user
+          %span.owner_links
+            = link_to(t('app.edit'), edit_answer_path(answer))
+    = render :partial => 'common/user_box', :locals => {:user => answer.user}      
+

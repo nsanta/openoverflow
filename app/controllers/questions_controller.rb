@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  skip_before_filter :require_user , :only => [:show, :index , :tag , :unanswered]
+  skip_before_filter :require_user , :only => [:new , :edit , :create , :update , :vote]
   after_filter :increment_total_views , :only => [:show]
 
 
@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   
   def show
     @question = Question.find(params[:id])
-    @answers = @question.answers.all(:order => 'selected, votes_average DESC')
+    @answers = @question.answers.all(:order => 'selected DESC')
   end
 
   def edit

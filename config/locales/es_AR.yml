@@ -182,7 +182,7 @@
     unselected: no elegido
   model:
     questions: preguntas
-    answers: respuestas
+    answers: resp
     votes: votos
     visits: visitas
     by: Por
