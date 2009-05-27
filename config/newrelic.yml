@@ -3,14 +3,14 @@
 # applications with deep visibility and low overhead.  For more information, 
 # visit www.newrelic.com.
 #
-# 
+# This configuration file is custom generated for nicolas55ar
 #
 # here are the settings that are common to all environments
 common: &default_settings
   # ============================== LICENSE KEY ===============================
   # You must specify the licence key associated with your New Relic account.
   # This key binds your Agent's data to your account in the New Relic RPM service.
-  license_key: 'PASTE_YOUR_KEY_HERE'
+  license_key: '683c69c119de925c52208e2706a235805745ea0b'
   
   # Application Name
   # Set this to be the name of your application as you'd like it show up in RPM.
@@ -41,13 +41,20 @@ common: &default_settings
   # it should not impact response times.
   ssl: false
   
+  # Set your application's Apdex threshold value with the 'apdex_t' setting, in seconds. The
+  # apdex_t value determines the buckets used to compute your overall Apdex score. Requests
+  # that take less than apdex_t seconds to process will be classified as Satisfying transactions;
+  # more than apdex_t seconds as Tolerating transactions; and more than four times the apdex_t 
+  # value as Frustrating transactions. For more
+  # about the Apdex standard, see http://support.newrelic.com/faqs/general/apdex
+  apdex_t: 1.0
 
   # Proxy settings for connecting to the RPM server.
   #
   # If a proxy is used, the host setting is required.  Other settings are optional.  Default
   # port is 8080.
   #
-  # proxy_host: proxyhostname
+  # proxy_host: hostname
   # proxy_port: 8080
   # proxy_user:
   # proxy_pass:
