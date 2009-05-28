@@ -1,0 +1,7 @@
+.vote_box {
+  background: #d1ba84; }
+  .vote_box .total_votes {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    background: white; }
