@@ -4,11 +4,13 @@
     display: block;
     margin: 10px; }
     .form .field label {
-      font-size: 24px; }
+      font-weight: bold; }
     .form .field input {
       border: 1px solid #12343D;
-      width: 100%;
-      font-size: 24px; }
+      width: 100%; }
+    .form .field textarea {
+      border: 1px solid #12343D;
+      width: 100%; }
   .form .submit_button {
     background: #13a5b8;
     color: white;

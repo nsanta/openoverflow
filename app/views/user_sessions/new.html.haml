@@ -1,17 +1,16 @@
 %h1 Login
 
-- form_for @user_session, :url => user_session_path do |f| 
-  = f.error_messages 
-  = f.label :login
-  %br
-  = f.text_field :login
-  %br
-  = f.label :password 
-  %br
-  = f.password_field :password
-  %br
-  = f.check_box :remember_me
-  = f.label t('app.remember_me')
-  %br
-  = f.submit "Login"
+.form
+  - form_for @user_session, :url => user_session_path do |f| 
+    = f.error_messages 
+    .field
+      = f.label :login
+      = f.text_field :login
+    .field    
+      = f.label :password 
+      = f.password_field :password
+    .field  
+      = f.check_box :remember_me
+      = f.label t('app.remember_me')
+    = f.submit "Login" , :class => 'submit_button'
 

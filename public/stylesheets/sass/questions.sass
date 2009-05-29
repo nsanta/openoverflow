@@ -19,20 +19,22 @@
       :background #13a5b8
     .stat_votes
       :background #12343d
-      
-.tags
-  :margin 12px 0 12px 0
-  a
-    :background #13a5b8
-    :color white
-    :margin 3px 3px 3px 3px
-    :padding 6px 9px 6px 9px
-    :text-decoration none
-    &:hover
-      :text-decoration underline
+
+.question , .home_question      
+  .tags
+    :margin 12px 0 12px 0
+    a
+      :background #13a5b8
+      :color white
+      :margin 3px 3px 3px 3px
+      :padding 6px 9px 6px 9px
+      :text-decoration none
+      &:hover
+        :text-decoration underline
   
 .question , .answer 
   .data
+    :border-top 1px solid #12343d
     :background #d1ba84
     .title
       :font-size 24px
@@ -47,8 +49,11 @@
       :padding 12px
 
 .answer
-  :margin 24px 0 0 0
+  .body
+    :padding 12px
   .data
+    :border-top 1px solid #12343d
     :background #efefef
   .right_data
+    :border-top 1px solid #12343d
     :background #9BD59B

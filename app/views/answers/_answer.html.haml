@@ -3,12 +3,13 @@
     %div{:class => 'grid_10'}
       .body= answer.body
     .clear
-    %div{:class => 'grid_4'}
-      %div{:class => 'vote_box grid_1 alpha'}
+    %div{:class => 'grid_5'}
+      %div{:class => 'vote_box grid_1'}
         = render :partial => 'common/vote_box' , :locals => {:model => answer}
       %div{:class => 'grid_3'}
+        - if answer.question.user == current_user  
+          = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')), select_answer_path(answer), :id => "answer_link_#{answer.id}", :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
         = link_to(t('action.flag'), new_answer_flag_path(answer), :rel => 'facebox')
-        = link_to((answer.selected ? t('answer.selected') : t('answer.unselected')), select_answer_path(answer), :id => "answer_link_#{answer.id}", :class => "select_answer_link #{answer.selected ? 'selected' : 'unselected'}")
         - if answer.user == current_user
           %span.owner_links
             = link_to(t('app.edit'), edit_answer_path(answer))

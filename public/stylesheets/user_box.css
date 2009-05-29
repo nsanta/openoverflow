@@ -1,11 +1,14 @@
 .user_box {
   float: right;
   font-size: 12px; }
-  .user_box .user_image {
+  .user_box .user_data_1 {
     float: left;
-    margin: 18px auto;
+    margin: 0px auto;
     text-align: center; }
-    .user_box .user_image img {
+    .user_box .user_data_1 .user_image {
       border: 6px solid white; }
-  .user_box .user_date {
+    .user_box .user_data_1 .points {
+      margin: 6px auto; }
+  .user_box .user_data_2 {
+    margin: 12px auto;
     float: right; }

@@ -2,6 +2,10 @@ class AnswersController < ApplicationController
   before_filter :load_question , :except => [:vote , :select , :flag ,:edit , :update]
   skip_before_filter :verify_authenticity_token
 
+  def new
+    @answer = @question.answers.build
+    render :layout => false
+  end
 
   def create
     @answer = @question.answers.build(:user => current_user , :body => params[:body])

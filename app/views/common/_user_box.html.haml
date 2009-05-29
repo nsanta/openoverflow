@@ -1,11 +1,10 @@
 %div{:class => 'user_box grid_4'}
-  %div{:class => 'user_image grid_2'}
-    = image_tag(user.avatar.url(:small))
-  %div{:class => 'user_data grid_2'}
-    %p
-      = "P: "
+  %div{:class => 'user_data_1 grid_2'}
+    = image_tag(user.avatar.url(:small) , :class => 'user_image')
+    %p.points
+      = image_tag('img02.gif')
       = user.total_points
+  %div{:class => 'user_data_2 grid_2'}
     %p
       = t("app.posted_by")
       = link_to(user.login , user)
- 

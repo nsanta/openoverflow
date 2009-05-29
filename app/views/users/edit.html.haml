@@ -1,6 +1,8 @@
-- form_for @user, :url => account_path , :html => {:multipart => true} do |f| 
-  = f.error_messages 
-  = render :partial => "form", :object => f 
-  = f.label "Avatar" , :avatar
-  = f.file_field :avatar
-  = f.submit "update" 
+.form
+  - form_for @user, :url => account_path , :html => {:multipart => true} do |f| 
+    = f.error_messages 
+    = render :partial => "form", :object => f 
+    .field
+      = f.label :avatar
+      = f.file_field :avatar
+    = f.submit "update" , :class => 'submit_button'

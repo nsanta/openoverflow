@@ -2,7 +2,6 @@
 
 .error_messages
   = error_messages_for :question
-
 .form
   - form_for @question do |f|
     = render :partial => 'form', :locals => {:f => f}

@@ -1,15 +1,12 @@
-= form.label :login 
-%br
-= form.text_field :login
-%br
-= form.label :Email
-%br
-= form.text_field :email
-%br
-= form.label :password, form.object.new_record? ? nil : "Change password" 
-%br 
-= form.password_field :password
-%br
-= form.label :password_confirmation
-%br
-= form.password_field :password_confirmation
+.field
+  = form.label :login 
+  = form.text_field :login
+.field
+  = form.label :Email
+  = form.text_field :email
+.field
+  = form.label :password, form.object.new_record? ? nil : "Change password" 
+  = form.password_field :password
+.field
+  = form.label :password_confirmation
+  = form.password_field :password_confirmation

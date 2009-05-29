@@ -1,13 +1,16 @@
 .field
   = f.label t("question.title")
   = f.text_field :title
-  
+#wmd-button-bar  
 .field
-  = f.text_area :body , :cols => 78 , :rows => 24
+  = f.text_area :body , :cols => 78 , :rows => 24, :id => "wmd-input" 
 
 .field
   = f.label t("question.tags")
   = f.text_field :tag_list
 
 - content_for :javascripts do
-  = javascript_include_tag('wmd/wmd')
+  = javascript_include_tag('wmd/showdown','wmd/wmd')
+
+- content_for :stylesheets do
+  = stylesheet_link_tag('wmd')
